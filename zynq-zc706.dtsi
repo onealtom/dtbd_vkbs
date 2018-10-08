@@ -2,6 +2,7 @@
 
 / {
 	model = "Xilinx Zynq ZC706";
+	/include/ "dt_ver.dtsi"
 	memory {
 		device_type = "memory";
 		reg = <0x00000000 0x40000000>;
