@@ -9,6 +9,7 @@ deploy:
   api_key:
     secure: Wl0Q+EgzU0y5UlLXfMe6DwNt108AGgSr+tiA5mlyyK3/aKHfMDJX5oyS6vOsitOyDOrsdK0BisqHsJsR9bv+hW+coQ/A+x6xn00v3cA/Z9ug0QWnpjV8bFl87kdxG5Dj6IrdbGEcMb/PMAI/XPfHvPKm6GmDO6/qP1ahzVdKxpXyjZxFHvul4W5zSRxz1+xruQoUuRN4I9Y/AFcMAwyOPzAK/5+GN3Ed9BE2C/h78P/gLArsaJ4I/OviVHuM1tJ50tinB6PXWc+NaIIKWVStDBsMGf1R9/xAGTrtsIfz/C7rVT4Xe1IQ3dybRW7jnhA4qv5ZQ4e4OjWhNmDgoizYZgwHCa7GYVDh6hDfEmDJ+S+1LhZON5b0vOGbg2XjiWJL/BgaSDsqhF6C2ytv6Ri4b/QcViYCwn/4mMjUULzv2ZYyQ6PR/RfsLf0sOVA2/eMz83O1z3bZDh6f+gv0WZojrnNH/kbAPQp1PPByxkys0u5bBf2/GbimG5RZOovDHC7urrP7TRizyvMDGUEwIvtYs5IFkxK6+T7r7hKBd5fvrb22Qji2uRnq4atPE46bLWdElu89NvGnE4gagK+nm8gcakN4QWEoDyzo+wsaDPxy248Fjx/WN07YuLavLDrMj2VqJThhYt+TQKIQtuCRicK1KHqHC9otQjGxgjlBUdCk8pY=
   file: devicetree.dtb
+  skip_cleanup: true
   on:
     repo: onealtom/dtbd_vkbs
 after_success:
