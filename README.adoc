@@ -1,6 +1,6 @@
 == How To Build
 
-image:https://travis-ci.org/onealtom/dt_build.svg?branch=master["Build Status", link="https://travis-ci.org/onealtom/dt_build"]
+image:https://travis-ci.org/onealtom/dtbd_vkbs.svg?branch=master["Build Status", link="https://travis-ci.org/onealtom/dtbd_vkbs"]
 
 [source,]
 ----
