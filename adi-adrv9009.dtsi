@@ -107,6 +107,15 @@
 			adi,channel-divider = <4>;
 			adi,signal-source = <SOURCE_SYSREF_VCO>;
 		};
+
+		ad9528_0_c4: channel@4 {
+			reg = <4>;
+			adi,extended-name = "TX_ORX_JESDCLK";
+			adi,driver-mode = <DRIVER_MODE_LVDS>;
+			adi,divider-phase = <0>;
+			adi,channel-divider = <2>;
+			adi,signal-source = <SOURCE_VCO>;
+		};
 	};
 
 	trx0_adrv9009: adrv9009-phy@1 {
@@ -124,7 +133,7 @@
 
 		/* Clocks */
 		/*<&axi_adrv9009_rx_jesd>, <&axi_adrv9009_tx_jesd>, <&axi_adrv9009_rx_os_jesd>,*/
-		clocks = <&clk0_ad9528 1>, <&clk0_ad9528 1>, <&clk0_ad9528 1>, <&clk0_ad9528 13>, <&clk0_ad9528 1>;
+		clocks = <&clk0_ad9528 1>, <&clk0_ad9528 4>, <&clk0_ad9528 4>, <&clk0_ad9528 13>, <&clk0_ad9528 1>;
 		clock-names = "jesd_rx_clk", "jesd_tx_clk", "jesd_rx_os_clk", "dev_clk", "fmc_clk";
 		clock-output-names = "rx_sampl_clk", "rx_os_sampl_clk", "tx_sampl_clk";
 
@@ -200,9 +209,9 @@
 
 		/* RX */
 
-		adi,rx-profile-rx-fir-gain_db = <(0)>;
-		adi,rx-profile-rx-fir-num-fir-coefs = <24>;
-		adi,rx-profile-rx-fir-coefs = /bits/ 16 <(-5) (-169) (320) (-108) (-644) (1217) (-877) (-1267) (4004) (-4020) (-4204) (22101) (22101) (-4204) (-4020) (4004) (-1267) (-877) (1217) (-644) (-108) (320) (-169) (-5)>;
+		adi,rx-profile-rx-fir-gain_db = <(-6)>;
+		adi,rx-profile-rx-fir-num-fir-coefs = <48>;
+		adi,rx-profile-rx-fir-coefs = /bits/ 16 <(2) (31) (47) (-29) (-109) (29) (220) (-6) (-394) (-59) (650) (193) (-1011) (-434) (1520) (851) (-2288) (-1720) (3215) (3063) (-5178) (-6772) (10332) (31570) (31570) (10332) (-6772) (-5178) (3063) (3215) (-1720) (-2288) (851) (1520) (-434) (-1011) (193) (650) (-59) (-394) (-6) (220) (29) (-109) (-29) (47) (31) (2)>;
 
 		adi,rx-profile-rx-fir-decimation = <2>;
 		adi,rx-profile-rx-dec5-decimation = <5>;
@@ -242,7 +251,7 @@
 		adi,orx-profile-rx-dec5-decimation = <5>;
 		adi,orx-profile-rhb1-decimation = <1>;
 		adi,orx-profile-orx-output-rate_khz = <368640>;
-		adi,orx-profile-rf-bandwidth_hz = <300000000>;
+		adi,orx-profile-rf-bandwidth_hz = <200000000>;
 		adi,orx-profile-rx-bbf3d-bcorner_khz = <225000>;
 		adi,orx-profile-orx-low-pass-adc-profile = /bits/ 16  <187 156 181 90 1280 1014 1425 177 1367 94 942 17 48 46 34 209 0 0 0 0 52 0 0 6 24 0 0 6 24 0 25 27 0 0 25 27 0 0 165 44 15 905>;
 		adi,orx-profile-orx-band-pass-adc-profile = /bits/ 16  <120 153 181 90 1280 2485 1396 0 1107 516 1073 98 29 25 30 193 0 0 0 0 48 0 0 0 24 0 0 0 24 0 25 27 0 0 25 27 0 0 165 44 15 905>;
@@ -466,5 +475,4 @@
 		//adi,tx-pa-protection-tx2-peak-threshold = <16>;
 	};
 };
-
 
