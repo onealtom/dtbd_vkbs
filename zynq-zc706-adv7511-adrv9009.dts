@@ -3,6 +3,58 @@
 /include/ "zynq-zc706.dtsi"
 ///include/ "zynq-zc706-adv7511.dtsi"
 
+/ {
+	fpga_axi: fpga-axi@0 {
+		compatible = "simple-bus";
+		#address-cells = <0x1>;
+		#size-cells = <0x1>;
+		ranges;
+
+	jesd_tx_axi_0: jesd_tx@40004000 {
+		compatible = "xlnx,jesd204-5.1";
+		reg = <0x40004000 0x10000>;
+			xlnx,frames-per-multiframe = <32>;
+			xlnx,bytes-per-frame = <2>;
+			xlnx,subclass = <1>;
+			xlnx,lanes = <0xF>;
+			xlnx,lanesync-enable;
+			xlnx,scramble-enable;
+			xlnx,node-is-transmit;
+	} ;
+
+	jesd_rx_axi_0: jesd_tx@40002000 {
+		compatible = "xlnx,jesd204-5.1";
+		reg = <0x40002000 0x10000>;
+			xlnx,frames-per-multiframe = <32>;
+			xlnx,bytes-per-frame = <4>;
+			xlnx,subclass = <1>;
+			xlnx,lanes = <0xC>;
+			xlnx,lanesync-enable;
+			xlnx,scramble-enable;
+
+	} ;
+
+	jesd_orx_axi_0: jesd_orx@40003000 {
+		compatible = "xlnx,jesd204-5.1";
+		reg = <0x40003000 0x10000>;
+			xlnx,frames-per-multiframe = <32>;
+			xlnx,bytes-per-frame = <2>;
+			xlnx,subclass = <1>;
+			xlnx,lanes = <0x3>;
+			xlnx,lanesync-enable;
+			xlnx,scramble-enable;
+	} ;
+
+		dpd: dpd@80000000 {
+			compatible = "generic-uio";
+			interrupt-parent = <0x4>;
+			interrupts = <0x0 30 0x1>;
+			reg = <0x80000000 0x4000000 0x84000000 0x20000>;
+		};
+	};
+};
+
+
 &spi0 {
 	status = "okay";
 };
