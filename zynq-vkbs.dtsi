@@ -62,17 +62,6 @@
 	};
 };
 
-&gem0 {
-	phy-handle = <&phy0>;
-	phy-mode = "rgmii-id";
-
-	phy0: phy@7 {
-		device_type = "ethernet-phy";
-		reg = <0x7>;
-	};
-
-};
-
 &usb0 {
 	xlnx,phy-reset-gpio = <&gpio0 7 0>;
 };
