@@ -102,7 +102,7 @@
 	tx1-enable-gpios = <&gpio0 111 0>;
 };
 
-&clk0_ad9528 {
+&clksync0_ad9545 {
 	reset-gpios = <&gpio0 113 0>;
 };
 
