@@ -7,6 +7,7 @@
 	aliases: aliases {
 		ethernet0 = &gem0;
 		serial0 = &uart1;
+		serial1 = &uart0;
 	};
 };
 
@@ -24,6 +25,10 @@
 };
 
 &uart1 {
+	status = "okay";
+};
+
+&uart0 {
 	status = "okay";
 };
 
