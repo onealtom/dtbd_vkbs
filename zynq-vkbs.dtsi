@@ -88,24 +88,51 @@
 		reg = <0x0>;
 		spi-max-frequency = <50000000>;
 		partition@0 {
-			label = "boot";
-			reg = <0x00000000 0x00500000>;
+			label = "qspif.BLR";
+			reg = <0x00000000 0x000E0000>;
 		};
-		partition@500000 {
-			label = "bootenv";
-			reg = <0x00500000 0x00020000>;
+		partition@1 {
+			label = "qspif.BLR.bak";
+			reg = <0x000E0000 0x000E0000>;
 		};
-		partition@520000 {
-			label = "config";
-			reg = <0x00520000 0x00020000>;
+		partition@2 {
+			label = "qspif.ENV";
+			reg = <0x001C0000 0x00020000>;
 		};
-		partition@540000 {
-			label = "image";
-			reg = <0x00540000 0x00a80000>;
+		partition@3 {
+			label = "qspif.ENV.bak";
+			reg = <0x001E0000 0x00020000>;
 		};
-		partition@fc0000 {
-			label = "spare";
-			reg = <0x00fc0000 0x00000000>;
+		partition@4 {
+			label = "qspif.DTB";
+			reg = <0x00200000 0x00080000>;
+		};
+		partition@5 {
+			label = "qspif.DTB.bak";
+			reg = <0x00280000 0x00080000>;
+		};
+//------------------3M cut---------------------
+		partition@6 {
+			label = "qspif.KNL";
+			reg = <0x00300000 0x00500000>;
+		};
+		partition@7 {
+			label = "qspif.KNL.bak";
+			reg = <0x00800000 0x00500000>;
+		};
+//------------------13M cut--------------------
+		partition@8 {
+			label = "qspif.SYSROOT";
+			reg = <0x00D00000 0x01300000>;
+		};
+//------------------32M cut--------------------
+		partition@9 {
+			label = "qspif.OPTFS";
+			reg = <0x02000000 0x01300000>;
+		};
+		partition@10 {
+			label = "qspif.BIT";
+			reg = <0x03300000 0x00D00000>;
 		};
 	};
 };
