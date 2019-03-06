@@ -1,21 +1,11 @@
-
-all: markprint vkbs_dtc
-
-zc706: markprint zc706_dtc
-
-vkbs: markprint vkbs_dtc
+all: markprint zc706_ad937x
 
 markprint:
 	./version.sh
 
-zc706_dtc:
-#	cpp -Iinclude -E -P -x assembler-with-cpp ad9523.dtsi > ad9523.tmp.dtsi
-	cpp -Iinclude -E -P -x assembler-with-cpp zynq-zc706-adv7511-adrv9009.dts > zynq-zc706-adv7511-adrv9009.tmp.dts
-	./dtc -I dts -O dtb -o zynq-zc706-adv7511-adrv9009.dtb zynq-zc706-adv7511-adrv9009.tmp.dts
-
-vkbs_dtc:
-	cpp -Iinclude -E -P -x assembler-with-cpp zynq-vkbs-adrv9009.dts > zynq-vkbs-adrv9009.tmp.dts
-	./dtc -I dts -O dtb -o devicetree.dtb zynq-vkbs-adrv9009.tmp.dts
+zc706_ad937x:
+	cpp -Iinclude -E -P -x assembler-with-cpp zynq-zc706-adv7511-adrv9375.dts > zynq-zc706-adv7511-adrv9375.tmp.dts
+	./dtc -I dts -O dtb -o devicetree.dtb zynq-zc706-adv7511-adrv9375.tmp.dts
 
 clean:
 	rm -rf *.dtb
