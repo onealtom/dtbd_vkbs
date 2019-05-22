@@ -70,7 +70,7 @@
 
 		/* SPI Setup */
 		reg = <1>;
-		spi-max-frequency = <25000000>;
+		spi-max-frequency = <10000000>;
 
 		interrupt-parent = <&gpio0>;
 		interrupts = <105 IRQ_TYPE_EDGE_RISING>;
