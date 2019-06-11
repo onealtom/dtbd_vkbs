@@ -13,6 +13,14 @@
 		linux,stdout-path = "/amba@0/uart@E0001000";
 	};
 
+	usb_phy0: phy0 {
+		compatible = "ulpi-phy";
+		#phy-cells = <0>;
+		reg = <0xe0002000 0x1000>;
+		view-port = <0x0170>;
+		drv-vbus;
+	};
+
 	leds {
 		compatible = "gpio-leds";
 		ds8 {
@@ -77,6 +85,10 @@
 
 &usb0 {
 	xlnx,phy-reset-gpio = <&gpio0 7 0>;
+	status = "okay";
+	//dr_mode = "peripheral";
+	dr_mode = "host";
+	usb-phy = <&usb_phy0>;
 };
 
 &qspi {
