@@ -27,8 +27,10 @@ BASH_TIME=`date '+%Y-%m-%d %H:%M:%S'`
 
 rm -f config.git-hash
  
+BUILDER=$USER"@"$NAME" ("$DTC_VER")"
+
 #cat version.h.template | sed "s/\$FULL_VERSION/$GIT_VERSION/g" > ./version.h
 #cat dtc_ver.dtsi.template | sed "s/\$HASH_VERSION/$GIT_VERSION/g;s/\$SH_TIME/$BASH_TIME/g" > dtc_ver.dtsi
-cat dt_ver.dtsi.template | sed "s/\$HASH_VERSION/$GIT_VERSION/g;s/\$SH_TIME/$BASH_TIME/g;s/\$BUILDER/$DTC_VER/g" > dt_ver.dtsi
+cat dt_ver.dtsi.template | sed "s/\$HASH_VERSION/$GIT_VERSION/g;s/\$SH_TIME/$BASH_TIME/g;s/\$BUILDER/$BUILDER/g" > dt_ver.dtsi
 
 echo "Generated dtc_ver.dtsi"
