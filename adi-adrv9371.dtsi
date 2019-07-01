@@ -1,7 +1,7 @@
 
 #include <dt-bindings/iio/frequency/ad9528.h>
 
-&fmc_spi {
+&fmc_spi_9528 {
 
 	clk0_ad9528: ad9528-1@0 {
 			#address-cells = <1>;
@@ -96,9 +96,14 @@
 	};
 
 
+
+};
+
+&fmc_spi_9371 {
+
 	trx0_ad9371: ad9371-phy@1 {
 		compatible = "adi,ad9371";
-		reg = <1>;
+		reg = <0>;
 
 		/* SPI Setup */
 		spi-max-frequency = <25000000>;
@@ -177,5 +182,5 @@
 		adi,sniffer-profile-rx-dec5-decimation = <5>;
 		adi,sniffer-profile-rx-fir-decimation = <4>;
 	};
-};
 
+};

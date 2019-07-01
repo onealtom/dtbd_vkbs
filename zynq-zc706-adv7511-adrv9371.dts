@@ -10,7 +10,12 @@
 	status = "okay";
 };
 
-#define fmc_spi spi0
+&spi1 {
+	status = "okay";
+};
+
+#define fmc_spi_9528 spi0
+#define fmc_spi_9371 spi1
 
 #include "adi-adrv9371.dtsi"
 
