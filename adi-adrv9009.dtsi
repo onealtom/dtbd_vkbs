@@ -23,7 +23,7 @@
 			reg = <0>;
 
 			//spi-3wire;
-			spi-max-frequency = <10000000>;
+			spi-max-frequency = <5000000>;
 
 			//reset-gpios = <&gpio_daq1 3 0>;
 
@@ -70,7 +70,7 @@
 
 		/* SPI Setup */
 		reg = <1>;
-		spi-max-frequency = <10000000>;
+		spi-max-frequency = <5000000>;
 
 		interrupt-parent = <&gpio0>;
 		interrupts = <105 IRQ_TYPE_EDGE_RISING>;
