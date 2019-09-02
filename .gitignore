@@ -5,3 +5,4 @@ dt_ver.dtsi
 
 !.gitignore
 !.travis.yml
+!.gitlab-ci.yml
