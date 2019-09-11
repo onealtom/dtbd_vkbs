@@ -14,8 +14,8 @@
 	status = "okay";
 };
 
-#define fmc_spi_9528 spi0
-#define fmc_spi_9371 spi1
+//#define fmc_spi_9528 spi0
+//#define fmc_spi_9371 spi1
 
 #include "adi-adrv9371.dtsi"
 
@@ -49,17 +49,32 @@
 // ad9371_gpio_16,       // 33
 // ad9371_gpio_18}));    // 32 + 54
 
-&trx0_ad9371 {
-	reset-gpios = <&gpio0 106 0>;
-	test-gpios = <&gpio0 107 0>;
-	sysref_req-gpios = <&gpio0 112 0>;
-	rx2_enable-gpios = <&gpio0 108 0>;
-	rx1_enable-gpios = <&gpio0 109 0>;
-	tx2_enable-gpios = <&gpio0 110 0>;
-	tx1_enable-gpios = <&gpio0 111 0>;
+&trx0_ad9371_a {
+	reset-gpios = <&gpio0 104 0>; //50
+	//test-gpios = <&gpio0 107 0>;
+	sysref_req-gpios = <&gpio0 112 0>; //58
+	//rx2_enable-gpios = <&gpio0 108 0>;
+	//rx1_enable-gpios = <&gpio0 109 0>;
+	//tx2_enable-gpios = <&gpio0 110 0>;
+	//tx1_enable-gpios = <&gpio0 111 0>;
 };
 
+//&trx0_ad9371_b {
+//	reset-gpios = <&gpio0 105 0>; //51
+//	sysref_req-gpios = <&gpio0 113 0>; //59
+//};
+
+//&trx0_ad9371_c {
+//	reset-gpios = <&gpio0 106 0>; //52
+//	sysref_req-gpios = <&gpio0 114 0>; //60
+//};
+
+//&trx0_ad9371_d {
+//	reset-gpios = <&gpio0 107 0>; //53
+//	sysref_req-gpios = <&gpio0 115 0>; //61
+//};
+
 &clk0_ad9528 {
-	reset-gpios = <&gpio0 113 0>;
+	reset-gpios = <&gpio0 95 0>;
 };
 

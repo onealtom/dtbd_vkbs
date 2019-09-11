@@ -110,6 +110,7 @@
 			compatible = "xlnx,zynq-gpio-1.0";
 			#gpio-cells = <2>;
 			clocks = <&clkc 42>;
+			emio-gpio-width = <64>;
 			gpio-controller;
 			interrupt-controller;
 			#interrupt-cells = <2>;
