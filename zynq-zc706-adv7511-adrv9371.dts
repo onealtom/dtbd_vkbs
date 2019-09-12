@@ -59,20 +59,20 @@
 	//tx1_enable-gpios = <&gpio0 111 0>;
 };
 
-//&trx0_ad9371_b {
-//	reset-gpios = <&gpio0 105 0>; //51
-//	sysref_req-gpios = <&gpio0 113 0>; //59
-//};
+&trx0_ad9371_b {
+	reset-gpios = <&gpio0 105 0>; //51
+	sysref_req-gpios = <&gpio0 113 0>; //59
+};
 
-//&trx0_ad9371_c {
-//	reset-gpios = <&gpio0 106 0>; //52
-//	sysref_req-gpios = <&gpio0 114 0>; //60
-//};
+&trx0_ad9371_c {
+	reset-gpios = <&gpio0 106 0>; //52
+	sysref_req-gpios = <&gpio0 114 0>; //60
+};
 
-//&trx0_ad9371_d {
-//	reset-gpios = <&gpio0 107 0>; //53
-//	sysref_req-gpios = <&gpio0 115 0>; //61
-//};
+&trx0_ad9371_d {
+	reset-gpios = <&gpio0 107 0>; //53
+	sysref_req-gpios = <&gpio0 115 0>; //61
+};
 
 &clk0_ad9528 {
 	reset-gpios = <&gpio0 95 0>;
