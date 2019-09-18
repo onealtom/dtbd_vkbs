@@ -10,7 +10,7 @@
 			#clock-cells = <1>;
 			compatible = "ad9528";
 	
-			spi-max-frequency = <10000000>;
+			spi-max-frequency = <25000000>;
 			//adi,spi-3wire-enable;
 			reg = <0>;
 	
