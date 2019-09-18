@@ -1,0 +1,28 @@
+software =
+{
+	version = "1.0.1";
+	RAU = {
+		hardware-compatibility: [ "REV1" ];
+
+		files: (
+			{
+				filename = "dtb.tar.gz";
+				type = "archive";
+				compressed = true;
+				device = "/dev/boot_update_node";
+				filesystem = "vfat";
+				path = "/";
+				properties = {create-destination = "true";}
+			}
+		);
+
+		scripts: (
+			{
+				filename = "update.sh";
+				type = "shellscript";
+			}
+		);
+
+	};
+}
+
