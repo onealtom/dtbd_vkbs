@@ -23,38 +23,45 @@
 
 	leds {
 		compatible = "gpio-leds";
-		ds6 {
-			label = "ds6";
-			gpios = <&gpio0 50 0>;
+
+		led2 {
+			label = "mio7";
+			gpios = <&gpio0 7 0>;
+			linux,default-trigger = "heartbeat";
+		};
+
+		led3 {
+			label = "mio9";
+			gpios = <&gpio0 9 0>;
 			linux,default-trigger = "heartbeat";
 		};
 
 	};
 
-	gpio_keys {
-		compatible = "gpio-keys";
-		#address-cells = <1>;
-		#size-cells = <0>;
-		autorepeat;
-
-		sw7 {
-			label = "Left";
-			linux,code = <105>; // Left
-			gpios = <&gpio0 58 0>;
-		};
-
-		sw8 {
-			label = "Right";
-			linux,code = <106>; // Right
-			gpios = <&gpio0 60 0>;
-		};
-
-		sw9 {
-			label = "Select";
-			linux,code = <28>; // Enter
-			gpios = <&gpio0 59 0>;
-		};
-	};
+//	gpio_keys {
+//		compatible = "gpio-keys";
+//		#address-cells = <1>;
+//		#size-cells = <0>;
+//		autorepeat;
+//
+//		sw7 {
+//			label = "Left";
+//			linux,code = <105>; // Left
+//			gpios = <&gpio0 58 0>;
+//		};
+//
+//		sw8 {
+//			label = "Right";
+//			linux,code = <106>; // Right
+//			gpios = <&gpio0 60 0>;
+//		};
+//
+//		sw9 {
+//			label = "Select";
+//			linux,code = <28>; // Enter
+//			gpios = <&gpio0 59 0>;
+//		};
+//	};
 };
 
 &gem0 {
