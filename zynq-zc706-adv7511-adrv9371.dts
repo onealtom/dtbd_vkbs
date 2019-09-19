@@ -4,6 +4,77 @@
 /include/ "zynq-zc706-adv7511.dtsi"
 
 &fpga_axi {
+	// TO AD9371_A S3_REFCLKP  9528_C_8
+	jesd_Tx_axi_0: jesd_Tx@40008000 {
+		compatible = "xlnx,jesd204-5.1";
+		reg = <0x40008000 0x1000>;
+
+		clocks = <&clk0_ad9528 8>;
+		clock-names = "jesd_clk";
+		clock-output-names = "jesd_phy0_tx_clk";
+
+		xlnx,frames-per-multiframe = <30>;
+		xlnx,bytes-per-frame = <2>;
+		xlnx,subclass = <1>;
+	    xlnx,lanes = <0x2>;
+		xlnx,node-is-transmit;
+	
+		xlnx,scramble-enable;
+		xlnx,sysref-always-enable;
+	};
+	jesd_Rx_axi_0: jesd_Rx@40009000 {
+	    compatible = "xlnx,jesd204-5.1";
+	    reg = <0x40009000 0x1000>;
+
+		clocks = <&clk0_ad9528 8>;
+		clock-names = "jesd_clk";
+		clock-output-names = "jesd_phy0_rx_clk";
+
+		xlnx,frames-per-multiframe = <30>;
+		xlnx,bytes-per-frame = <2>;
+		xlnx,subclass = <1>;
+	    xlnx,lanes = <0x2>;
+	
+		xlnx,scramble-enable;
+		xlnx,sysref-always-enable;
+	} ;
+
+	// TO AD9371_A S2_REFCLKP  9528_C_10
+	jesd_Tx_axi_1: jesd_Tx@4000A000 {
+		compatible = "xlnx,jesd204-5.1";
+		reg = <0x4000A000 0x1000>;
+
+		clocks = <&clk0_ad9528 10>;
+		clock-names = "jesd_clk";
+		clock-output-names = "jesd_phy1_tx_clk";
+
+		xlnx,frames-per-multiframe = <30>;
+		xlnx,bytes-per-frame = <2>;
+		xlnx,subclass = <1>;
+	    xlnx,lanes = <0x2>;
+		xlnx,node-is-transmit;
+	
+		xlnx,scramble-enable;
+		xlnx,sysref-always-enable;
+	};
+	jesd_Rx_axi_1: jesd_Rx@4000B000 {
+	    compatible = "xlnx,jesd204-5.1";
+	    reg = <0x4000B000 0x1000>;
+
+		clocks = <&clk0_ad9528 10>;
+		clock-names = "jesd_clk";
+		clock-output-names = "jesd_phy1_rx_clk";
+
+		xlnx,frames-per-multiframe = <30>;
+		xlnx,bytes-per-frame = <2>;
+		xlnx,subclass = <1>;
+	    xlnx,lanes = <0x2>;
+	
+		xlnx,scramble-enable;
+		xlnx,sysref-always-enable;
+	} ;
+
+
 };
 
 &spi0 {
@@ -14,67 +85,8 @@
 	status = "okay";
 };
 
-//#define fmc_spi_9528 spi0
-//#define fmc_spi_9371 spi1
 
 #include "adi-adrv9371.dtsi"
 
-// ad9371_dac_fifo_bypass_s 60
-// ad9528_reset_b,       // 59
-// ad9528_sysref_req,    // 58
-// ad9371_tx1_enable,    // 57
-// ad9371_tx2_enable,    // 56
-// ad9371_rx1_enable,    // 55
-// ad9371_rx2_enable,    // 54
-// ad9371_test,          // 53
-// ad9371_reset_b,       // 52
-// ad9371_gpint,         // 51
-// ad9371_gpio_00,       // 50
-// ad9371_gpio_01,       // 49
-// ad9371_gpio_02,       // 48
-// ad9371_gpio_03,       // 47
-// ad9371_gpio_04,       // 46
-// ad9371_gpio_05,       // 45
-// ad9371_gpio_06,       // 44
-// ad9371_gpio_07,       // 43
-// ad9371_gpio_15,       // 42
-// ad9371_gpio_08,       // 41
-// ad9371_gpio_09,       // 40
-// ad9371_gpio_10,       // 39
-// ad9371_gpio_11,       // 38
-// ad9371_gpio_12,       // 37
-// ad9371_gpio_14,       // 36
-// ad9371_gpio_13,       // 35
-// ad9371_gpio_17,       // 34
-// ad9371_gpio_16,       // 33
-// ad9371_gpio_18}));    // 32 + 54
 
-&trx0_ad9371_a {
-	reset-gpios = <&gpio0 104 0>; //50
-	//test-gpios = <&gpio0 107 0>;
-	sysref_req-gpios = <&gpio0 112 0>; //58
-	//rx2_enable-gpios = <&gpio0 108 0>;
-	//rx1_enable-gpios = <&gpio0 109 0>;
-	//tx2_enable-gpios = <&gpio0 110 0>;
-	//tx1_enable-gpios = <&gpio0 111 0>;
-};
-
-&trx0_ad9371_b {
-	reset-gpios = <&gpio0 105 0>; //51
-	sysref_req-gpios = <&gpio0 113 0>; //59
-};
-
-&trx0_ad9371_c {
-	reset-gpios = <&gpio0 106 0>; //52
-	sysref_req-gpios = <&gpio0 114 0>; //60
-};
-
-&trx0_ad9371_d {
-	reset-gpios = <&gpio0 107 0>; //53
-	sysref_req-gpios = <&gpio0 115 0>; //61
-};
-
-&clk0_ad9528 {
-	reset-gpios = <&gpio0 95 0>;
-};
 
