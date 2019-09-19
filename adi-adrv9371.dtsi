@@ -175,7 +175,7 @@
 		spi-max-frequency = <25000000>;
 
 		/* Clocks */
-		clocks = <&clk0_ad9528 4>, <&clk0_ad9528 4>, <&clk0_ad9528 4>, <&clk0_ad9528 4>, <&clk0_ad9528 4>;
+		clocks = <&jesd_Tx_axi_0>, <&jesd_Rx_axi_0>, <&clk0_ad9528 4>, <&clk0_ad9528 4>, <&clk0_ad9528 4>;
 		clock-names = "jesd_rx_clk", "jesd_tx_clk","jesd_rx_os_clk", "dev_clk", "fmc_clk";
 
 		clock-output-names = "rx_sampl_clk", "rx_os_sampl_clk", "tx_sampl_clk";
@@ -191,7 +191,7 @@
 		spi-max-frequency = <25000000>;
 
 		/* Clocks */
-		clocks = <&clk0_ad9528 6>, <&clk0_ad9528 6>, <&clk0_ad9528 6>, <&clk0_ad9528 6>, <&clk0_ad9528 6>;
+		clocks = <&jesd_Tx_axi_1>, <&jesd_Rx_axi_1>, <&clk0_ad9528 6>, <&clk0_ad9528 6>, <&clk0_ad9528 6>;
 		clock-names = "jesd_rx_clk", "jesd_tx_clk","jesd_rx_os_clk", "dev_clk", "fmc_clk";
 
 		clock-output-names = "rx_sampl_clk", "rx_os_sampl_clk", "tx_sampl_clk";
@@ -202,7 +202,28 @@
 
 };
 
-//&spi1 {
+&spi1 {
+
+	clksync0_ad9545: ad9545-lpc@0 {
+			#address-cells = <1>;
+			#size-cells = <0>;
+			#clock-cells = <1>;
+			compatible = "ad9545";
+			reg = <0>;
+
+			//spi-3wire;
+			spi-max-frequency = <25000000>;
+
+			//reset-gpios = <&gpio_daq1 3 0>;
+
+			clock-output-names = "ad9545-1_out0", "ad9545-1_out1", "ad9545-1_out2";
+
+/include/ "ad9545map.dtsi"
+
+
+	};
+
+
 //
 //	trx0_ad9371_c: ad9371-phy-c@1 {
 //		compatible = "adi,ad9371";
@@ -236,24 +257,24 @@
 //		/include/ "ad9371_mux.dtsi"
 //	};
 //
-//};
+};
 
 //-------------------------------------------------------------------------------------------
 
-//&trx0_ad9371_a {
-//	reset-gpios = <&gpio0 104 0>; //50
-//	//test-gpios = <&gpio0 107 0>;
-//	sysref_req-gpios = <&gpio0 112 0>; //58
-//	//rx2_enable-gpios = <&gpio0 108 0>;
-//	//rx1_enable-gpios = <&gpio0 109 0>;
-//	//tx2_enable-gpios = <&gpio0 110 0>;
-//	//tx1_enable-gpios = <&gpio0 111 0>;
-//};
-//
-//&trx0_ad9371_b {
-//	reset-gpios = <&gpio0 105 0>; //51
-//	sysref_req-gpios = <&gpio0 113 0>; //59
-//};
+&trx0_ad9371_a {
+	reset-gpios = <&gpio0 104 0>; //50
+	//test-gpios = <&gpio0 107 0>;
+	sysref_req-gpios = <&gpio0 112 0>; //58
+	//rx2_enable-gpios = <&gpio0 108 0>;
+	//rx1_enable-gpios = <&gpio0 109 0>;
+	//tx2_enable-gpios = <&gpio0 110 0>;
+	//tx1_enable-gpios = <&gpio0 111 0>;
+};
+
+&trx0_ad9371_b {
+	reset-gpios = <&gpio0 105 0>; //51
+	sysref_req-gpios = <&gpio0 113 0>; //59
+};
 
 //&trx0_ad9371_c {
 //	reset-gpios = <&gpio0 106 0>; //52

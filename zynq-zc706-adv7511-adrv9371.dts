@@ -6,6 +6,7 @@
 &fpga_axi {
 	// TO AD9371_A S3_REFCLKP  9528_C_8
 	jesd_Tx_axi_0: jesd_Tx@40008000 {
+		#clock-cells = <0>;
 		compatible = "xlnx,jesd204-5.1";
 		reg = <0x40008000 0x1000>;
 
@@ -23,6 +24,7 @@
 		xlnx,sysref-always-enable;
 	};
 	jesd_Rx_axi_0: jesd_Rx@40009000 {
+		#clock-cells = <0>;
 	    compatible = "xlnx,jesd204-5.1";
 	    reg = <0x40009000 0x1000>;
 
@@ -41,6 +43,7 @@
 
 	// TO AD9371_A S2_REFCLKP  9528_C_10
 	jesd_Tx_axi_1: jesd_Tx@4000A000 {
+		#clock-cells = <0>;
 		compatible = "xlnx,jesd204-5.1";
 		reg = <0x4000A000 0x1000>;
 
@@ -58,6 +61,7 @@
 		xlnx,sysref-always-enable;
 	};
 	jesd_Rx_axi_1: jesd_Rx@4000B000 {
+		#clock-cells = <0>;
 	    compatible = "xlnx,jesd204-5.1";
 	    reg = <0x4000B000 0x1000>;
 
