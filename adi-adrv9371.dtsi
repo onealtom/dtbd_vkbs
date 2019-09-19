@@ -175,7 +175,7 @@
 		spi-max-frequency = <25000000>;
 
 		/* Clocks */
-		clocks = <&clk0_ad9528 1>, <&clk0_ad9528 1>, <&clk0_ad9528 1>, <&clk0_ad9528 13>, <&clk0_ad9528 1>;
+		clocks = <&clk0_ad9528 4>, <&clk0_ad9528 4>, <&clk0_ad9528 4>, <&clk0_ad9528 4>, <&clk0_ad9528 4>;
 		clock-names = "jesd_rx_clk", "jesd_tx_clk","jesd_rx_os_clk", "dev_clk", "fmc_clk";
 
 		clock-output-names = "rx_sampl_clk", "rx_os_sampl_clk", "tx_sampl_clk";
@@ -191,7 +191,7 @@
 		spi-max-frequency = <25000000>;
 
 		/* Clocks */
-		clocks = <&clk0_ad9528 1>, <&clk0_ad9528 1>, <&clk0_ad9528 1>, <&clk0_ad9528 13>, <&clk0_ad9528 1>;
+		clocks = <&clk0_ad9528 6>, <&clk0_ad9528 6>, <&clk0_ad9528 6>, <&clk0_ad9528 6>, <&clk0_ad9528 6>;
 		clock-names = "jesd_rx_clk", "jesd_tx_clk","jesd_rx_os_clk", "dev_clk", "fmc_clk";
 
 		clock-output-names = "rx_sampl_clk", "rx_os_sampl_clk", "tx_sampl_clk";
@@ -202,42 +202,100 @@
 
 };
 
-&spi1 {
+//&spi1 {
+//
+//	trx0_ad9371_c: ad9371-phy-c@1 {
+//		compatible = "adi,ad9371";
+//		reg = <1>;
+//		/* SPI Setup */
+//		spi-max-frequency = <25000000>;
+//
+//		/* Clocks */
+//		clocks = <&clk0_ad9528 1>, <&clk0_ad9528 1>, <&clk0_ad9528 1>, <&clk0_ad9528 13>, <&clk0_ad9528 1>;
+//		clock-names = "jesd_rx_clk", "jesd_tx_clk","jesd_rx_os_clk", "dev_clk", "fmc_clk";
+//
+//		clock-output-names = "rx_sampl_clk", "rx_os_sampl_clk", "tx_sampl_clk";
+//		#clock-cells = <1>;
+//
+//		/include/ "ad9371_mux.dtsi"
+//	};
+//
+//	trx0_ad9371_d: ad9371-phy-d@2 {
+//		compatible = "adi,ad9371";
+//		reg = <2>;
+//		/* SPI Setup */
+//		spi-max-frequency = <25000000>;
+//
+//		/* Clocks */
+//		clocks = <&clk0_ad9528 1>, <&clk0_ad9528 1>, <&clk0_ad9528 1>, <&clk0_ad9528 13>, <&clk0_ad9528 1>;
+//		clock-names = "jesd_rx_clk", "jesd_tx_clk","jesd_rx_os_clk", "dev_clk", "fmc_clk";
+//
+//		clock-output-names = "rx_sampl_clk", "rx_os_sampl_clk", "tx_sampl_clk";
+//		#clock-cells = <1>;
+//
+//		/include/ "ad9371_mux.dtsi"
+//	};
+//
+//};
 
-	trx0_ad9371_c: ad9371-phy-c@1 {
-		compatible = "adi,ad9371";
-		reg = <1>;
-		/* SPI Setup */
-		spi-max-frequency = <25000000>;
+//-------------------------------------------------------------------------------------------
 
-		/* Clocks */
-		clocks = <&clk0_ad9528 1>, <&clk0_ad9528 1>, <&clk0_ad9528 1>, <&clk0_ad9528 13>, <&clk0_ad9528 1>;
-		clock-names = "jesd_rx_clk", "jesd_tx_clk",
-			"jesd_rx_os_clk", "dev_clk", "fmc_clk",
-			"sysref_dev_clk", "sysref_fmc_clk";
+//&trx0_ad9371_a {
+//	reset-gpios = <&gpio0 104 0>; //50
+//	//test-gpios = <&gpio0 107 0>;
+//	sysref_req-gpios = <&gpio0 112 0>; //58
+//	//rx2_enable-gpios = <&gpio0 108 0>;
+//	//rx1_enable-gpios = <&gpio0 109 0>;
+//	//tx2_enable-gpios = <&gpio0 110 0>;
+//	//tx1_enable-gpios = <&gpio0 111 0>;
+//};
+//
+//&trx0_ad9371_b {
+//	reset-gpios = <&gpio0 105 0>; //51
+//	sysref_req-gpios = <&gpio0 113 0>; //59
+//};
 
-		clock-output-names = "rx_sampl_clk", "rx_os_sampl_clk", "tx_sampl_clk";
-		#clock-cells = <1>;
+//&trx0_ad9371_c {
+//	reset-gpios = <&gpio0 106 0>; //52
+//	sysref_req-gpios = <&gpio0 114 0>; //60
+//};
+//
+//&trx0_ad9371_d {
+//	reset-gpios = <&gpio0 107 0>; //53
+//	sysref_req-gpios = <&gpio0 115 0>; //61
+//};
 
-		/include/ "ad9371_mux.dtsi"
-	};
-
-	trx0_ad9371_d: ad9371-phy-d@2 {
-		compatible = "adi,ad9371";
-		reg = <2>;
-		/* SPI Setup */
-		spi-max-frequency = <25000000>;
-
-		/* Clocks */
-		clocks = <&clk0_ad9528 1>, <&clk0_ad9528 1>, <&clk0_ad9528 1>, <&clk0_ad9528 13>, <&clk0_ad9528 1>;
-		clock-names = "jesd_rx_clk", "jesd_tx_clk",
-			"jesd_rx_os_clk", "dev_clk", "fmc_clk",
-			"sysref_dev_clk", "sysref_fmc_clk";
-
-		clock-output-names = "rx_sampl_clk", "rx_os_sampl_clk", "tx_sampl_clk";
-		#clock-cells = <1>;
-
-		/include/ "ad9371_mux.dtsi"
-	};
-
+&clk0_ad9528 {
+	reset-gpios = <&gpio0 95 0>;
 };
+
+
+// ad9371_dac_fifo_bypass_s 60
+// ad9528_reset_b,       // 59
+// ad9528_sysref_req,    // 58
+// ad9371_tx1_enable,    // 57
+// ad9371_tx2_enable,    // 56
+// ad9371_rx1_enable,    // 55
+// ad9371_rx2_enable,    // 54
+// ad9371_test,          // 53
+// ad9371_reset_b,       // 52
+// ad9371_gpint,         // 51
+// ad9371_gpio_00,       // 50
+// ad9371_gpio_01,       // 49
+// ad9371_gpio_02,       // 48
+// ad9371_gpio_03,       // 47
+// ad9371_gpio_04,       // 46
+// ad9371_gpio_05,       // 45
+// ad9371_gpio_06,       // 44
+// ad9371_gpio_07,       // 43
+// ad9371_gpio_15,       // 42
+// ad9371_gpio_08,       // 41
+// ad9371_gpio_09,       // 40
+// ad9371_gpio_10,       // 39
+// ad9371_gpio_11,       // 38
+// ad9371_gpio_12,       // 37
+// ad9371_gpio_14,       // 36
+// ad9371_gpio_13,       // 35
+// ad9371_gpio_17,       // 34
+// ad9371_gpio_16,       // 33
+// ad9371_gpio_18}));    // 32 + 54
