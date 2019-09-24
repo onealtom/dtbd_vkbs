@@ -14,8 +14,8 @@
 		clock-names = "jesd_clk";
 		clock-output-names = "jesd_phy0_tx_clk";
 
-		xlnx,frames-per-multiframe = <30>;
-		xlnx,bytes-per-frame = <2>;
+		xlnx,frames-per-multiframe = <32>;
+		xlnx,bytes-per-frame = <4>;
 		xlnx,subclass = <1>;
 	    xlnx,lanes = <0x2>;
 		xlnx,node-is-transmit;
@@ -32,8 +32,8 @@
 		clock-names = "jesd_clk";
 		clock-output-names = "jesd_phy0_rx_clk";
 
-		xlnx,frames-per-multiframe = <30>;
-		xlnx,bytes-per-frame = <2>;
+		xlnx,frames-per-multiframe = <32>;
+		xlnx,bytes-per-frame = <4>;
 		xlnx,subclass = <1>;
 	    xlnx,lanes = <0x2>;
 	
@@ -51,8 +51,8 @@
 		clock-names = "jesd_clk";
 		clock-output-names = "jesd_phy1_tx_clk";
 
-		xlnx,frames-per-multiframe = <30>;
-		xlnx,bytes-per-frame = <2>;
+		xlnx,frames-per-multiframe = <32>;
+		xlnx,bytes-per-frame = <4>;
 		xlnx,subclass = <1>;
 	    xlnx,lanes = <0x2>;
 		xlnx,node-is-transmit;
@@ -69,8 +69,8 @@
 		clock-names = "jesd_clk";
 		clock-output-names = "jesd_phy1_rx_clk";
 
-		xlnx,frames-per-multiframe = <30>;
-		xlnx,bytes-per-frame = <2>;
+		xlnx,frames-per-multiframe = <32>;
+		xlnx,bytes-per-frame = <4>;
 		xlnx,subclass = <1>;
 	    xlnx,lanes = <0x2>;
 	

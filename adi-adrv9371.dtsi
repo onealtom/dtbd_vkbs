@@ -175,7 +175,7 @@
 		spi-max-frequency = <25000000>;
 
 		/* Clocks */
-		clocks = <&jesd_Tx_axi_0>, <&jesd_Rx_axi_0>, <&clk0_ad9528 4>, <&clk0_ad9528 4>, <&clk0_ad9528 4>;
+		clocks = <&jesd_Rx_axi_0>, <&jesd_Tx_axi_0>, <&clk0_ad9528 4>, <&clk0_ad9528 4>, <&clk0_ad9528 4>;
 		clock-names = "jesd_rx_clk", "jesd_tx_clk","jesd_rx_os_clk", "dev_clk", "fmc_clk";
 
 		clock-output-names = "rx_sampl_clk", "rx_os_sampl_clk", "tx_sampl_clk";
@@ -191,7 +191,7 @@
 		spi-max-frequency = <25000000>;
 
 		/* Clocks */
-		clocks = <&jesd_Tx_axi_1>, <&jesd_Rx_axi_1>, <&clk0_ad9528 6>, <&clk0_ad9528 6>, <&clk0_ad9528 6>;
+		clocks = <&jesd_Rx_axi_1>, <&jesd_Tx_axi_1>, <&clk0_ad9528 6>, <&clk0_ad9528 6>, <&clk0_ad9528 6>;
 		clock-names = "jesd_rx_clk", "jesd_tx_clk","jesd_rx_os_clk", "dev_clk", "fmc_clk";
 
 		clock-output-names = "rx_sampl_clk", "rx_os_sampl_clk", "tx_sampl_clk";
@@ -224,7 +224,7 @@
 	};
 
 
-//
+
 //	trx0_ad9371_c: ad9371-phy-c@1 {
 //		compatible = "adi,ad9371";
 //		reg = <1>;
@@ -240,7 +240,7 @@
 //
 //		/include/ "ad9371_mux.dtsi"
 //	};
-//
+
 //	trx0_ad9371_d: ad9371-phy-d@2 {
 //		compatible = "adi,ad9371";
 //		reg = <2>;
