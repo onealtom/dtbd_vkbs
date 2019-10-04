@@ -3,8 +3,8 @@
 		adi,clocks-clk-pll-hs-div = <4>;
 		adi,clocks-clk-pll-vco-div = <2>;
 	
-		adi,rx-settings-rx-pll-lo-frequency_hz = /bits/64 <829500000>;
-		adi,tx-settings-tx-pll-lo-frequency_hz = /bits/64 <874500000>;
+		adi,rx-settings-rx-pll-lo-frequency_hz = /bits/ 64 <829500000>;
+		adi,tx-settings-tx-pll-lo-frequency_hz = /bits/ 64 <874500000>;
 
 		/* rx framer */
 		adi,jesd204-rx-framer-m = <4>;
