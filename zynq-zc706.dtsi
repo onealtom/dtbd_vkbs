@@ -25,14 +25,16 @@
 		compatible = "gpio-leds";
 
 		led2 {
-			label = "mio7";
-			gpios = <&gpio0 7 0>;
+			label = "led2";
+			gpios = <&gpio0 7 0>;//MIO7
+			default-state = "on";
 			linux,default-trigger = "heartbeat";
 		};
 
 		led3 {
-			label = "mio9";
-			gpios = <&gpio0 9 0>;
+			label = "led3";
+			gpios = <&gpio0 9 0>;//MIO9
+			default-state = "on";
 			linux,default-trigger = "heartbeat";
 		};
 
@@ -78,7 +80,7 @@
 
 
 &usb0 {
-	xlnx,phy-reset-gpio = <&gpio0 7 0>;
+	//xlnx,phy-reset-gpio = <&gpio0 7 0>;
 	status = "okay";
 	//dr_mode = "peripheral";
 	dr_mode = "host";
