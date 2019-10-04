@@ -4,6 +4,9 @@
 /include/ "zynq-zc706-adv7511.dtsi"
 
 &fpga_axi {
+	//------------------------------
+	//           1st
+	//------------------------------
 	// TO AD9371_A S3_REFCLKP  9528_C_8
 	jesd_Tx_axi_0: jesd_Tx@40008000 {
 		#clock-cells = <0>;
@@ -40,7 +43,9 @@
 		xlnx,scramble-enable;
 		xlnx,sysref-always-enable;
 	} ;
-
+	//------------------------------
+	//           2nd
+	//------------------------------
 	// TO AD9371_A S2_REFCLKP  9528_C_10
 	jesd_Tx_axi_1: jesd_Tx@4000A000 {
 		#clock-cells = <0>;
@@ -78,7 +83,84 @@
 		xlnx,sysref-always-enable;
 	} ;
 
+	//------------------------------
+	//           3rd
+	//------------------------------
+	// TO AD9371_C S3_REFCLKP  9528_C_8
+	jesd_Tx_axi_2: jesd_Tx@4000A000 {
+		#clock-cells = <0>;
+		compatible = "xlnx,jesd204-5.1";
+		reg = <0x4000C000 0x1000>;
 
+		clocks = <&clk0_ad9528 10>;
+		clock-names = "jesd_clk";
+		clock-output-names = "jesd_phy2_tx_clk";
+
+		xlnx,frames-per-multiframe = <32>;
+		xlnx,bytes-per-frame = <4>;
+		xlnx,subclass = <1>;
+	    xlnx,lanes = <0x2>;
+		xlnx,node-is-transmit;
+	
+		xlnx,scramble-enable;
+		xlnx,sysref-always-enable;
+	};
+	jesd_Rx_axi_2: jesd_Rx@4000B000 {
+		#clock-cells = <0>;
+	    compatible = "xlnx,jesd204-5.1";
+	    reg = <0x4000D000 0x1000>;
+
+		clocks = <&clk0_ad9528 10>;
+		clock-names = "jesd_clk";
+		clock-output-names = "jesd_phy2_rx_clk";
+
+		xlnx,frames-per-multiframe = <32>;
+		xlnx,bytes-per-frame = <4>;
+		xlnx,subclass = <1>;
+	    xlnx,lanes = <0x2>;
+	
+		xlnx,scramble-enable;
+		xlnx,sysref-always-enable;
+	} ;
+	//------------------------------
+	//           4th
+	//------------------------------
+	// TO AD9371_D S3_REFCLKP  9528_C_8
+	jesd_Tx_axi_3: jesd_Tx@4000A000 {
+		#clock-cells = <0>;
+		compatible = "xlnx,jesd204-5.1";
+		reg = <0x4000E000 0x1000>;
+
+		clocks = <&clk0_ad9528 8>;
+		clock-names = "jesd_clk";
+		clock-output-names = "jesd_phy3_tx_clk";
+
+		xlnx,frames-per-multiframe = <32>;
+		xlnx,bytes-per-frame = <4>;
+		xlnx,subclass = <1>;
+	    xlnx,lanes = <0x2>;
+		xlnx,node-is-transmit;
+	
+		xlnx,scramble-enable;
+		xlnx,sysref-always-enable;
+	};
+	jesd_Rx_axi_3: jesd_Rx@4000B000 {
+		#clock-cells = <0>;
+	    compatible = "xlnx,jesd204-5.1";
+	    reg = <0x4000F000 0x1000>;
+
+		clocks = <&clk0_ad9528 8>;
+		clock-names = "jesd_clk";
+		clock-output-names = "jesd_phy3_rx_clk";
+
+		xlnx,frames-per-multiframe = <32>;
+		xlnx,bytes-per-frame = <4>;
+		xlnx,subclass = <1>;
+	    xlnx,lanes = <0x2>;
+	
+		xlnx,scramble-enable;
+		xlnx,sysref-always-enable;
+	} ;
 };
 
 &spi0 {
@@ -90,7 +172,8 @@
 };
 
 
+
 #include "adi-adrv9371.dtsi"
 
-
+#include "peripheral.dtsi"
 

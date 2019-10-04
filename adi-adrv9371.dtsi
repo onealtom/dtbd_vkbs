@@ -166,6 +166,14 @@
 				adi,signal-source = <SOURCE_SYSREF_VCO>;
 			};
 
+			ad9528_0_c13: channel@13 {
+				reg = <13>;
+				adi,extended-name = "S1_REFCLKP";
+				adi,driver-mode = <DRIVER_MODE_LVDS>;
+				adi,divider-phase = <0>;
+				adi,channel-divider = <10>;
+				adi,signal-source = <SOURCE_VCO>;
+			};
 	};
 
 	trx0_ad9371_a: ad9371-phy-a@1 {
@@ -225,38 +233,38 @@
 
 
 
-//	trx0_ad9371_c: ad9371-phy-c@1 {
-//		compatible = "adi,ad9371";
-//		reg = <1>;
-//		/* SPI Setup */
-//		spi-max-frequency = <25000000>;
-//
-//		/* Clocks */
-//		clocks = <&clk0_ad9528 1>, <&clk0_ad9528 1>, <&clk0_ad9528 1>, <&clk0_ad9528 13>, <&clk0_ad9528 1>;
-//		clock-names = "jesd_rx_clk", "jesd_tx_clk","jesd_rx_os_clk", "dev_clk", "fmc_clk";
-//
-//		clock-output-names = "rx_sampl_clk", "rx_os_sampl_clk", "tx_sampl_clk";
-//		#clock-cells = <1>;
-//
-//		/include/ "ad9371_mux.dtsi"
-//	};
+	trx0_ad9371_c: ad9371-phy-c@1 {
+		compatible = "adi,ad9371";
+		reg = <1>;
+		/* SPI Setup */
+		spi-max-frequency = <25000000>;
 
-//	trx0_ad9371_d: ad9371-phy-d@2 {
-//		compatible = "adi,ad9371";
-//		reg = <2>;
-//		/* SPI Setup */
-//		spi-max-frequency = <25000000>;
-//
-//		/* Clocks */
-//		clocks = <&clk0_ad9528 1>, <&clk0_ad9528 1>, <&clk0_ad9528 1>, <&clk0_ad9528 13>, <&clk0_ad9528 1>;
-//		clock-names = "jesd_rx_clk", "jesd_tx_clk","jesd_rx_os_clk", "dev_clk", "fmc_clk";
-//
-//		clock-output-names = "rx_sampl_clk", "rx_os_sampl_clk", "tx_sampl_clk";
-//		#clock-cells = <1>;
-//
-//		/include/ "ad9371_mux.dtsi"
-//	};
-//
+		/* Clocks */
+		clocks = <&jesd_Rx_axi_2>, <&jesd_Tx_axi_2>, <&clk0_ad9528 1>, <&clk0_ad9528 13>, <&clk0_ad9528 1>;
+		clock-names = "jesd_rx_clk", "jesd_tx_clk","jesd_rx_os_clk", "dev_clk", "fmc_clk";
+
+		clock-output-names = "rx_sampl_clk", "rx_os_sampl_clk", "tx_sampl_clk";
+		#clock-cells = <1>;
+
+		/include/ "ad9371_mux.dtsi"
+	};
+
+	trx0_ad9371_d: ad9371-phy-d@2 {
+		compatible = "adi,ad9371";
+		reg = <2>;
+		/* SPI Setup */
+		spi-max-frequency = <25000000>;
+
+		/* Clocks */
+		clocks = <&jesd_Rx_axi_3>, <&jesd_Tx_axi_3>, <&clk0_ad9528 1>, <&clk0_ad9528 13>, <&clk0_ad9528 1>;
+		clock-names = "jesd_rx_clk", "jesd_tx_clk","jesd_rx_os_clk", "dev_clk", "fmc_clk";
+
+		clock-output-names = "rx_sampl_clk", "rx_os_sampl_clk", "tx_sampl_clk";
+		#clock-cells = <1>;
+
+		/include/ "ad9371_mux.dtsi"
+	};
+
 };
 
 //-------------------------------------------------------------------------------------------
@@ -276,15 +284,15 @@
 	sysref_req-gpios = <&gpio0 113 0>; //59
 };
 
-//&trx0_ad9371_c {
-//	reset-gpios = <&gpio0 106 0>; //52
-//	sysref_req-gpios = <&gpio0 114 0>; //60
-//};
-//
-//&trx0_ad9371_d {
-//	reset-gpios = <&gpio0 107 0>; //53
-//	sysref_req-gpios = <&gpio0 115 0>; //61
-//};
+&trx0_ad9371_c {
+	reset-gpios = <&gpio0 106 0>; //52
+	sysref_req-gpios = <&gpio0 114 0>; //60
+};
+
+&trx0_ad9371_d {
+	reset-gpios = <&gpio0 107 0>; //53
+	sysref_req-gpios = <&gpio0 115 0>; //61
+};
 
 &clk0_ad9528 {
 	reset-gpios = <&gpio0 95 0>;
