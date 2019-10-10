@@ -183,7 +183,7 @@
 		spi-max-frequency = <25000000>;
 
 		/* Clocks */
-		clocks = <&jesd_Rx_axi_0>, <&jesd_Tx_axi_0>, <&clk0_ad9528 4>, <&clk0_ad9528 4>, <&clk0_ad9528 4>;
+		clocks = <&jesd_Rx_axi_0>, <&jesd_Tx_axi_0>, <&clk0_ad9528 4>, <&clk0_ad9528 4>, <&clk0_ad9528 11>;
 		clock-names = "jesd_rx_clk", "jesd_tx_clk","jesd_rx_os_clk", "dev_clk", "fmc_clk";
 
 		clock-output-names = "rx_sampl_clk", "rx_os_sampl_clk", "tx_sampl_clk";
@@ -199,7 +199,7 @@
 		spi-max-frequency = <25000000>;
 
 		/* Clocks */
-		clocks = <&jesd_Rx_axi_1>, <&jesd_Tx_axi_1>, <&clk0_ad9528 6>, <&clk0_ad9528 6>, <&clk0_ad9528 6>;
+		clocks = <&jesd_Rx_axi_1>, <&jesd_Tx_axi_1>, <&clk0_ad9528 6>, <&clk0_ad9528 6>, <&clk0_ad9528 11>;
 		clock-names = "jesd_rx_clk", "jesd_tx_clk","jesd_rx_os_clk", "dev_clk", "fmc_clk";
 
 		clock-output-names = "rx_sampl_clk", "rx_os_sampl_clk", "tx_sampl_clk";
@@ -240,7 +240,7 @@
 		spi-max-frequency = <25000000>;
 
 		/* Clocks */
-		clocks = <&jesd_Rx_axi_2>, <&jesd_Tx_axi_2>, <&clk0_ad9528 1>, <&clk0_ad9528 13>, <&clk0_ad9528 1>;
+		clocks = <&jesd_Rx_axi_2>, <&jesd_Tx_axi_2>, <&clk0_ad9528 1>, <&clk0_ad9528 1>, <&clk0_ad9528 11>;
 		clock-names = "jesd_rx_clk", "jesd_tx_clk","jesd_rx_os_clk", "dev_clk", "fmc_clk";
 
 		clock-output-names = "rx_sampl_clk", "rx_os_sampl_clk", "tx_sampl_clk";
@@ -256,7 +256,7 @@
 		spi-max-frequency = <25000000>;
 
 		/* Clocks */
-		clocks = <&jesd_Rx_axi_3>, <&jesd_Tx_axi_3>, <&clk0_ad9528 1>, <&clk0_ad9528 13>, <&clk0_ad9528 1>;
+		clocks = <&jesd_Rx_axi_3>, <&jesd_Tx_axi_3>, <&clk0_ad9528 1>, <&clk0_ad9528 3>, <&clk0_ad9528 11>;
 		clock-names = "jesd_rx_clk", "jesd_tx_clk","jesd_rx_os_clk", "dev_clk", "fmc_clk";
 
 		clock-output-names = "rx_sampl_clk", "rx_os_sampl_clk", "tx_sampl_clk";
