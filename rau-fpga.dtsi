@@ -1,0 +1,29 @@
+
+
+&fpga_axi {
+
+	rf_port_axi_0: rf_port@0x40001040 {
+		#clock-cells = <1>;
+		compatible = "rau,rf-port-0.1";
+		reg = <0x40001040 0x40>;
+
+		clocks = <&trx0_ad9371_a 3>, <&trx0_ad9371_a 4> ;
+		clock-names = "lo_rx_freq","lo_tx_freq";
+
+		clock-output-names = "rf0_lo_tx_freq", "rf0_lo_rx_freq";
+
+	};
+
+	rf_port_axi_1: rf_port@0x40001080 {
+		#clock-cells = <1>;
+		compatible = "rau,rf-port-0.1";
+		reg = <0x40001080 0x40>;
+
+		clocks = <&trx0_ad9371_a 3>, <&trx0_ad9371_a 4> ;
+		clock-names = "lo_rx_freq","lo_tx_freq";
+
+		clock-output-names = "rf0_lo_tx_freq", "rf0_lo_rx_freq";
+
+	};
+};
+
