@@ -2,7 +2,7 @@
 
 &fpga_axi {
 
-	rf_port_axi_0: rf_port@0x40001040 {
+	rf_port_axi_0: rfport-0@0x40001040 {
 		#clock-cells = <1>;
 		compatible = "rau,rf-port-0.1";
 		reg = <0x40001040 0x40>;
@@ -14,7 +14,7 @@
 
 	};
 
-	rf_port_axi_1: rf_port@0x40001080 {
+	rf_port_axi_1: rfport-1@0x40001080 {
 		#clock-cells = <1>;
 		compatible = "rau,rf-port-0.1";
 		reg = <0x40001080 0x40>;

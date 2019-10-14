@@ -78,7 +78,7 @@
 		xlnx,bytes-per-frame = <4>;
 		xlnx,subclass = <1>;
 	    xlnx,lanes = <0x2>;
-	
+
 		xlnx,scramble-enable;
 		xlnx,sysref-always-enable;
 	} ;
@@ -175,6 +175,8 @@
 
 
 #include "adi-adrv9371.dtsi"
+
+/include/ "rau-fpga.dtsi"
 
 #include "peripheral.dtsi"
 
