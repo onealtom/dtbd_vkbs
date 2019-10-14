@@ -13,7 +13,7 @@
 		compatible = "xlnx,jesd204-5.1";
 		reg = <0x40008000 0x1000>;
 
-		clocks = <&clk0_ad9528 13>;
+		clocks = <&clk0_ad9528 4>;
 		clock-names = "jesd_clk";
 		clock-output-names = "jesd_phy0_tx_clk";
 
@@ -31,7 +31,7 @@
 	    compatible = "xlnx,jesd204-5.1";
 	    reg = <0x40009000 0x1000>;
 
-		clocks = <&clk0_ad9528 13>;
+		clocks = <&clk0_ad9528 4>;
 		clock-names = "jesd_clk";
 		clock-output-names = "jesd_phy0_rx_clk";
 
@@ -52,7 +52,7 @@
 		compatible = "xlnx,jesd204-5.1";
 		reg = <0x4000A000 0x1000>;
 
-		clocks = <&clk0_ad9528 10>;
+		clocks = <&clk0_ad9528 6>;
 		clock-names = "jesd_clk";
 		clock-output-names = "jesd_phy1_tx_clk";
 
@@ -70,7 +70,7 @@
 	    compatible = "xlnx,jesd204-5.1";
 	    reg = <0x4000B000 0x1000>;
 
-		clocks = <&clk0_ad9528 10>;
+		clocks = <&clk0_ad9528 6>;
 		clock-names = "jesd_clk";
 		clock-output-names = "jesd_phy1_rx_clk";
 
@@ -92,7 +92,7 @@
 		compatible = "xlnx,jesd204-5.1";
 		reg = <0x4000C000 0x1000>;
 
-		clocks = <&clk0_ad9528 8>;
+		clocks = <&clk0_ad9528 1>;
 		clock-names = "jesd_clk";
 		clock-output-names = "jesd_phy2_tx_clk";
 
@@ -110,7 +110,7 @@
 	    compatible = "xlnx,jesd204-5.1";
 	    reg = <0x4000D000 0x1000>;
 
-		clocks = <&clk0_ad9528 8>;
+		clocks = <&clk0_ad9528 1>;
 		clock-names = "jesd_clk";
 		clock-output-names = "jesd_phy2_rx_clk";
 
@@ -131,7 +131,7 @@
 		compatible = "xlnx,jesd204-5.1";
 		reg = <0x4000E000 0x1000>;
 
-		clocks = <&clk0_ad9528 8>;
+		clocks = <&clk0_ad9528 3>;
 		clock-names = "jesd_clk";
 		clock-output-names = "jesd_phy3_tx_clk";
 
@@ -149,7 +149,7 @@
 	    compatible = "xlnx,jesd204-5.1";
 	    reg = <0x4000F000 0x1000>;
 
-		clocks = <&clk0_ad9528 8>;
+		clocks = <&clk0_ad9528 3>;
 		clock-names = "jesd_clk";
 		clock-output-names = "jesd_phy3_rx_clk";
 
