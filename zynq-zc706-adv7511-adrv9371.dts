@@ -20,16 +20,17 @@
 		xlnx,frames-per-multiframe = <32>;
 		xlnx,bytes-per-frame = <4>;
 		xlnx,subclass = <1>;
-	    xlnx,lanes = <0x2>;
+		xlnx,lanes = <0x5>;
 		xlnx,node-is-transmit;
-	
+		
+		xlnx,lanesync-enable;
 		xlnx,scramble-enable;
 		xlnx,sysref-always-enable;
 	};
 	jesd_Rx_axi_0: jesd_Rx@40009000 {
 		#clock-cells = <0>;
-	    compatible = "xlnx,jesd204-5.1";
-	    reg = <0x40009000 0x1000>;
+		compatible = "xlnx,jesd204-5.1";
+		reg = <0x40009000 0x1000>;
 
 		clocks = <&clk0_ad9528 4>;
 		clock-names = "jesd_clk";
@@ -38,7 +39,7 @@
 		xlnx,frames-per-multiframe = <32>;
 		xlnx,bytes-per-frame = <4>;
 		xlnx,subclass = <1>;
-	    xlnx,lanes = <0x2>;
+		xlnx,lanes = <0x5>;
 	
 		xlnx,scramble-enable;
 		xlnx,sysref-always-enable;
@@ -59,16 +60,16 @@
 		xlnx,frames-per-multiframe = <32>;
 		xlnx,bytes-per-frame = <4>;
 		xlnx,subclass = <1>;
-	    xlnx,lanes = <0x2>;
+		xlnx,lanes = <0x5>;
 		xlnx,node-is-transmit;
-	
+		xlnx,lanesync-enable;
 		xlnx,scramble-enable;
 		xlnx,sysref-always-enable;
 	};
 	jesd_Rx_axi_1: jesd_Rx@4000B000 {
 		#clock-cells = <0>;
-	    compatible = "xlnx,jesd204-5.1";
-	    reg = <0x4000B000 0x1000>;
+		compatible = "xlnx,jesd204-5.1";
+		reg = <0x4000B000 0x1000>;
 
 		clocks = <&clk0_ad9528 6>;
 		clock-names = "jesd_clk";
@@ -77,8 +78,8 @@
 		xlnx,frames-per-multiframe = <32>;
 		xlnx,bytes-per-frame = <4>;
 		xlnx,subclass = <1>;
-	    xlnx,lanes = <0x2>;
-
+		xlnx,lanes = <0x5>;
+		xlnx,lanesync-enable;
 		xlnx,scramble-enable;
 		xlnx,sysref-always-enable;
 	} ;
@@ -99,16 +100,16 @@
 		xlnx,frames-per-multiframe = <32>;
 		xlnx,bytes-per-frame = <4>;
 		xlnx,subclass = <1>;
-	    xlnx,lanes = <0x2>;
+		xlnx,lanes = <0x5>;
 		xlnx,node-is-transmit;
-	
+		xlnx,lanesync-enable;
 		xlnx,scramble-enable;
 		xlnx,sysref-always-enable;
 	};
 	jesd_Rx_axi_2: jesd_Rx@4000D000 {
 		#clock-cells = <0>;
-	    compatible = "xlnx,jesd204-5.1";
-	    reg = <0x4000D000 0x1000>;
+		compatible = "xlnx,jesd204-5.1";
+		reg = <0x4000D000 0x1000>;
 
 		clocks = <&clk0_ad9528 1>;
 		clock-names = "jesd_clk";
@@ -117,8 +118,8 @@
 		xlnx,frames-per-multiframe = <32>;
 		xlnx,bytes-per-frame = <4>;
 		xlnx,subclass = <1>;
-	    xlnx,lanes = <0x2>;
-	
+		xlnx,lanes = <0x5>;
+		xlnx,lanesync-enable;
 		xlnx,scramble-enable;
 		xlnx,sysref-always-enable;
 	} ;
@@ -138,16 +139,16 @@
 		xlnx,frames-per-multiframe = <32>;
 		xlnx,bytes-per-frame = <4>;
 		xlnx,subclass = <1>;
-	    xlnx,lanes = <0x2>;
+		xlnx,lanes = <0x5>;
 		xlnx,node-is-transmit;
-	
+		xlnx,lanesync-enable;
 		xlnx,scramble-enable;
 		xlnx,sysref-always-enable;
 	};
 	jesd_Rx_axi_3: jesd_Rx@4000F000 {
 		#clock-cells = <0>;
-	    compatible = "xlnx,jesd204-5.1";
-	    reg = <0x4000F000 0x1000>;
+		compatible = "xlnx,jesd204-5.1";
+		reg = <0x4000F000 0x1000>;
 
 		clocks = <&clk0_ad9528 3>;
 		clock-names = "jesd_clk";
@@ -156,8 +157,8 @@
 		xlnx,frames-per-multiframe = <32>;
 		xlnx,bytes-per-frame = <4>;
 		xlnx,subclass = <1>;
-	    xlnx,lanes = <0x2>;
-	
+		xlnx,lanes = <0x5>;
+		xlnx,lanesync-enable;
 		xlnx,scramble-enable;
 		xlnx,sysref-always-enable;
 	} ;
