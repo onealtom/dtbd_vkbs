@@ -11,7 +11,7 @@
 			#clock-cells = <1>;
 			compatible = "ad9528";
 	
-			spi-max-frequency = <25000000>;
+			spi-max-frequency = <15000000>;
 			//adi,spi-3wire-enable;
 			reg = <0>;
 	
@@ -180,7 +180,7 @@
 		compatible = "adi,ad9371";
 		reg = <1>;
 		/* SPI Setup */
-		spi-max-frequency = <25000000>;
+		spi-max-frequency = <15000000>;
 
 		/* Clocks */
 		clocks = <&jesd_Rx_axi_0>, <&jesd_Tx_axi_0>, <&clk0_ad9528 4>, <&clk0_ad9528 4>, <&clk0_ad9528 11>;
@@ -196,7 +196,7 @@
 		compatible = "adi,ad9371";
 		reg = <2>;
 		/* SPI Setup */
-		spi-max-frequency = <25000000>;
+		spi-max-frequency = <15000000>;
 
 		/* Clocks */
 		clocks = <&jesd_Rx_axi_1>, <&jesd_Tx_axi_1>, <&clk0_ad9528 6>, <&clk0_ad9528 6>, <&clk0_ad9528 11>;
@@ -220,7 +220,7 @@
 			reg = <0>;
 
 			//spi-3wire;
-			spi-max-frequency = <25000000>;
+			spi-max-frequency = <15000000>;
 
 			//reset-gpios = <&gpio_daq1 3 0>;
 
@@ -237,7 +237,7 @@
 		compatible = "adi,ad9371";
 		reg = <1>;
 		/* SPI Setup */
-		spi-max-frequency = <25000000>;
+		spi-max-frequency = <15000000>;
 
 		/* Clocks */
 		clocks = <&jesd_Rx_axi_2>, <&jesd_Tx_axi_2>, <&clk0_ad9528 1>, <&clk0_ad9528 1>, <&clk0_ad9528 11>;
@@ -253,7 +253,7 @@
 		compatible = "adi,ad9371";
 		reg = <2>;
 		/* SPI Setup */
-		spi-max-frequency = <25000000>;
+		spi-max-frequency = <15000000>;
 
 		/* Clocks */
 		clocks = <&jesd_Rx_axi_3>, <&jesd_Tx_axi_3>, <&clk0_ad9528 3>, <&clk0_ad9528 3>, <&clk0_ad9528 11>;
