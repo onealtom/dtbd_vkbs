@@ -10,24 +10,24 @@
 			#size-cells = <0>;
 			#clock-cells = <1>;
 			compatible = "ad9528";
-	
+
 			spi-max-frequency = <15000000>;
 			//adi,spi-3wire-enable;
 			reg = <0>;
-	
+
 			clock-output-names = "ad9528-1_out0", "ad9528-1_out1", "ad9528-1_out2", "ad9528-1_out3", "ad9528-1_out4", "ad9528-1_out5", 	"ad9528-1_out6", "ad9528-1_out7", "ad9528-1_out8", "ad9528-1_out9", "ad9528-1_out10", "ad9528-1_out11", "ad9528-1_out12", 	"ad9528-1_out13";
 			adi,vcxo-freq = <30720000>;
-	
+
 			adi,refa-enable;
 			adi,refa-diff-rcv-enable;
 			adi,refa-r-div = <1>;
 			//adi,osc-in-cmos-neg-inp-enable;
-	
+
 			/* PLL1 config */
 			adi,pll1-feedback-div = <1>;
 			adi,pll1-charge-pump-current-nA = <63500>;
-	
-	
+
+
 			/* PLL2 config */
 			adi,pll2-ndiv-a-cnt = <0>;
 			adi,pll2-ndiv-b-cnt = <30>;
@@ -35,7 +35,7 @@
 			adi,pll2-n2-div = <40>; /* N / M1 */
 			adi,pll2-r1-div = <1>;
 			adi,pll2-charge-pump-current-nA = <805000>;
-	
+
 			/* SYSREF config */
 			adi,sysref-src = <SYSREF_SRC_INTERNAL>;
 			adi,sysref-pattern-mode = <SYSREF_PATTERN_CONTINUOUS>;
@@ -43,11 +43,11 @@
 			adi,sysref-request-enable;
 			adi,sysref-nshot-mode = <SYSREF_NSHOT_4_PULSES>;
 			adi,sysref-request-trigger-mode = <SYSREF_LEVEL_HIGH>;
-	
+
 			adi,rpole2 = <RPOLE2_900_OHM>;
 			adi,rzero = <RZERO_1850_OHM>;
 			adi,cpole1 = <CPOLE1_16_PF>;
-	
+
 			adi,status-mon-pin0-function-select = <1>; /* PLL1 & PLL2 Locked */
 			adi,status-mon-pin1-function-select = <7>; /* REFA Correct */
 
@@ -129,7 +129,7 @@
 				adi,channel-divider = <10>;
 				adi,signal-source = <SOURCE_VCO>;
 			};
-			
+
 			ad9528_0_c9: channel@9 {
 				reg = <9>;
 				adi,extended-name = "S4_REFCLKP";
@@ -202,7 +202,7 @@
 		clocks = <&jesd_Rx_axi_1>, <&jesd_Tx_axi_1>, <&clk0_ad9528 6>, <&clk0_ad9528 6>, <&clk0_ad9528 11>;
 		clock-names = "jesd_rx_clk", "jesd_tx_clk","jesd_rx_os_clk", "dev_clk", "fmc_clk";
 
-		clock-output-names = "rx_sampl_clk", "rx_os_sampl_clk", "tx_sampl_clk";
+		clock-output-names = "rx_sampl_clk", "rx_os_sampl_clk", "tx_sampl_clk","lo_rx_clk","lo_tx_clk";
 		#clock-cells = <1>;
 
 		/include/ "ad9371_mux.dtsi"
@@ -243,7 +243,7 @@
 		clocks = <&jesd_Rx_axi_2>, <&jesd_Tx_axi_2>, <&clk0_ad9528 1>, <&clk0_ad9528 1>, <&clk0_ad9528 11>;
 		clock-names = "jesd_rx_clk", "jesd_tx_clk","jesd_rx_os_clk", "dev_clk", "fmc_clk";
 
-		clock-output-names = "rx_sampl_clk", "rx_os_sampl_clk", "tx_sampl_clk";
+		clock-output-names = "rx_sampl_clk", "rx_os_sampl_clk", "tx_sampl_clk","lo_rx_clk","lo_tx_clk";
 		#clock-cells = <1>;
 
 		/include/ "ad9371_mux.dtsi"
@@ -259,7 +259,7 @@
 		clocks = <&jesd_Rx_axi_3>, <&jesd_Tx_axi_3>, <&clk0_ad9528 3>, <&clk0_ad9528 3>, <&clk0_ad9528 11>;
 		clock-names = "jesd_rx_clk", "jesd_tx_clk","jesd_rx_os_clk", "dev_clk", "fmc_clk";
 
-		clock-output-names = "rx_sampl_clk", "rx_os_sampl_clk", "tx_sampl_clk";
+		clock-output-names = "rx_sampl_clk", "rx_os_sampl_clk", "tx_sampl_clk","lo_rx_clk","lo_tx_clk";
 		#clock-cells = <1>;
 
 		/include/ "ad9371_mux.dtsi"
