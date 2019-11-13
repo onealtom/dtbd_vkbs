@@ -3,20 +3,20 @@
 #include "gpio_line_names.h"
 
 &gpio0{
-	gpio-line-names = MIO_00, MIO_01, MIO_02, MIO_03, MIO_04, MIO_05, MIO_06, MIO_07, 
-			MIO_08, MIO_09, MIO_10, MIO_11, MIO_12, MIO_13, MIO_14, MIO_15, 
-			MIO_16, MIO_17, MIO_18, MIO_19, MIO_20, MIO_21, MIO_22, MIO_23, 
+	gpio-line-names = MIO_00, MIO_01, MIO_02, MIO_03, MIO_04, MIO_05, MIO_06, MIO_07,
+			MIO_08, MIO_09, MIO_10, MIO_11, MIO_12, MIO_13, MIO_14, MIO_15,
+			MIO_16, MIO_17, MIO_18, MIO_19, MIO_20, MIO_21, MIO_22, MIO_23,
 			MIO_24, MIO_25, MIO_26, MIO_27, MIO_28, MIO_29, MIO_30, MIO_31,
-			MIO_32, MIO_33, MIO_34, MIO_35, MIO_36, MIO_37, MIO_38, MIO_39, 
+			MIO_32, MIO_33, MIO_34, MIO_35, MIO_36, MIO_37, MIO_38, MIO_39,
 			MIO_40, MIO_41, MIO_42, MIO_43, MIO_44, MIO_45, MIO_46, MIO_47,
-			MIO_48, MIO_49, MIO_50, MIO_51, MIO_52, MIO_53, 
-			EMIO_00, EMIO_01, EMIO_02, EMIO_03, EMIO_04, EMIO_05, EMIO_06, EMIO_07, 
-			EMIO_08, EMIO_09, EMIO_10, EMIO_11, EMIO_12, EMIO_13, EMIO_14, EMIO_15, 
-			EMIO_16, EMIO_17, EMIO_18, EMIO_19, EMIO_20, EMIO_21, EMIO_22, EMIO_23, 
-			EMIO_24, EMIO_25, EMIO_26, EMIO_27, EMIO_28, EMIO_29, EMIO_30, EMIO_31, 
-			EMIO_32, EMIO_33, EMIO_34, EMIO_35, EMIO_36, EMIO_37, EMIO_38, EMIO_39, 
-			EMIO_40, EMIO_41, EMIO_42, EMIO_43, EMIO_44, EMIO_45, EMIO_46, EMIO_47, 
-			EMIO_48, EMIO_49, EMIO_50, EMIO_51, EMIO_52, EMIO_53, EMIO_54, EMIO_55, 
+			MIO_48, MIO_49, MIO_50, MIO_51, MIO_52, MIO_53,
+			EMIO_00, EMIO_01, EMIO_02, EMIO_03, EMIO_04, EMIO_05, EMIO_06, EMIO_07,
+			EMIO_08, EMIO_09, EMIO_10, EMIO_11, EMIO_12, EMIO_13, EMIO_14, EMIO_15,
+			EMIO_16, EMIO_17, EMIO_18, EMIO_19, EMIO_20, EMIO_21, EMIO_22, EMIO_23,
+			EMIO_24, EMIO_25, EMIO_26, EMIO_27, EMIO_28, EMIO_29, EMIO_30, EMIO_31,
+			EMIO_32, EMIO_33, EMIO_34, EMIO_35, EMIO_36, EMIO_37, EMIO_38, EMIO_39,
+			EMIO_40, EMIO_41, EMIO_42, EMIO_43, EMIO_44, EMIO_45, EMIO_46, EMIO_47,
+			EMIO_48, EMIO_49, EMIO_50, EMIO_51, EMIO_52, EMIO_53, EMIO_54, EMIO_55,
 			EMIO_56, EMIO_57, EMIO_58, EMIO_59, EMIO_60, EMIO_61, EMIO_62, EMIO_63;
 };
 
@@ -44,8 +44,8 @@
 			compatible = "i2c-gpio";
 			//SDA EMIO19 gpio73
 			//SCL EMIO18 gpio72
-			gpios = <&gpio0 73 0 
-				 &gpio0 72 0 
+			gpios = <&gpio0 73 0
+				 &gpio0 72 0
 					>;
 			i2c-gpio,sda-open-drain;
 			i2c-gpio,scl-open-drain;
@@ -62,8 +62,8 @@
 			compatible = "i2c-gpio";
 			//SDA EMIO24 gpio78
 			//SCL EMIO23 gpio77
-			gpios = <&gpio0 78 0 
-				 &gpio0 77 0 
+			gpios = <&gpio0 78 0
+				 &gpio0 77 0
 					>;
 			i2c-gpio,sda-open-drain;
 			i2c-gpio,scl-open-drain;
@@ -80,8 +80,8 @@
 			compatible = "i2c-gpio";
 			//SDA EMIO29 gpio83
 			//SCL EMIO28 gpio82
-			gpios = <&gpio0 83 0 
-				 &gpio0 82 0 
+			gpios = <&gpio0 83 0
+				 &gpio0 82 0
 					>;
 			i2c-gpio,sda-open-drain;
 			i2c-gpio,scl-open-drain;
