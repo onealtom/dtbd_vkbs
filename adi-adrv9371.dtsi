@@ -20,7 +20,7 @@
 
 			adi,refa-enable;
 			adi,refa-diff-rcv-enable;
-			adi,refa-r-div = <1>;
+			adi,refa-r-div = <8>;
 			//adi,osc-in-cmos-neg-inp-enable;
 
 			/* PLL1 config */
@@ -228,7 +228,35 @@
 
 /include/ "ad9545map.dtsi"
 
+			ad9545_0_c0:channel@0 {
+				reg = <0>;
+				extended-name = "OUT0A";
+				clock-frequency = <184320000>;
+			};
+			ad9545_0_c1:channel@1 {
+				reg = <1>;
+				extended-name = "OUT0B";
+				clock-frequency = <184320000>;
 
+			};
+			ad9545_0_c2:channel@2 {
+				reg = <2>;
+				extended-name = "OUT0C";
+				clock-frequency = <184320000>;
+
+			};
+			ad9545_0_c3:channel@3 {
+				reg = <3>;
+				extended-name = "OUT1A";
+				clock-frequency = <184320000>;
+
+			};
+			ad9545_0_c4:channel@4 {
+				reg = <4>;
+				extended-name = "OUT1B";
+				clock-frequency = <184320000>;
+
+			};
 	};
 
 

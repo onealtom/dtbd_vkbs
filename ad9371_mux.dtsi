@@ -2,7 +2,7 @@
 		adi,clocks-device-clock_khz = <122880>;
 		adi,clocks-clk-pll-hs-div = <4>;
 		adi,clocks-clk-pll-vco-div = <2>;
-	
+
 		adi,rx-settings-rx-pll-lo-frequency_hz = /bits/ 64 <829500000>;
 		adi,tx-settings-tx-pll-lo-frequency_hz = /bits/ 64 <874500000>;
 
@@ -46,7 +46,7 @@
 		adi,obs-profile-iq-rate_khz = <122880>;
 		adi,obs-profile-rf-bandwidth_hz = <100000000>;
 		adi,obs-profile-rx-bbf-3db-corner_khz = <50000>;
-		
+
 		adi,obs-profile-rx-fir-gain_db = <6>;
 		adi,obs-profile-rx-fir-num-fir-coefs = <24>;
 		adi,obs-profile-rx-fir-coefs = /bits/ 16 <(-289) (81) (-23) (-86) (229) (-354) (397) (-233) (-657) (1699) (-4172) (23010) (-4172) (1699) (-657) (-233) (397) (-354) (229) (-86) (-23) (81) (-289) (0)>;
@@ -64,7 +64,7 @@
 		adi,tx-profile-rf-bandwidth_hz = <100000000>;
 		adi,tx-profile-tx-dac-3db-corner_khz = <100000>;
 		adi,tx-profile-tx-bbf-3db-corner_khz = <50000>;
-		
+
 		adi,tx-profile-tx-fir-gain_db = <6>;
 		adi,tx-profile-tx-fir-num-fir-coefs = <16>;
 		adi,tx-profile-tx-fir-coefs = /bits/ 16 <(7) (-244) (182) (-149) (-81) (909) (-2806) (20438) (-2806) (909) (-81) (-149) (182) (-244) (7) (0)>;
