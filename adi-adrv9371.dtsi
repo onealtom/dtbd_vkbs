@@ -20,11 +20,11 @@
 
 			adi,refa-enable;
 			adi,refa-diff-rcv-enable;
-			adi,refa-r-div = <2>;
+			adi,refa-r-div = <1>;
 			//adi,osc-in-cmos-neg-inp-enable;
 
 			/* PLL1 config */
-			adi,pll1-feedback-div = <1>;
+			adi,pll1-feedback-div = <8>;
 			adi,pll1-charge-pump-current-nA = <63500>;
 
 
