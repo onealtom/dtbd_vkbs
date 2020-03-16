@@ -16,16 +16,16 @@
 			reg = <0>;
 
 			clock-output-names = "ad9528-1_out0", "ad9528-1_out1", "ad9528-1_out2", "ad9528-1_out3", "ad9528-1_out4", "ad9528-1_out5", 	"ad9528-1_out6", "ad9528-1_out7", "ad9528-1_out8", "ad9528-1_out9", "ad9528-1_out10", "ad9528-1_out11", "ad9528-1_out12", 	"ad9528-1_out13";
-			adi,vcxo-freq = <30720000>;
+			adi,vcxo-freq = <122880000>;
 
 			adi,refa-enable;
 			adi,refa-diff-rcv-enable;
 
-			adi,refa-r-div = <1>;
+			adi,refa-r-div = <165>;
 			//adi,osc-in-cmos-neg-inp-enable;
 
 			/* PLL1 config */
-			adi,pll1-feedback-div = <8>;
+			adi,pll1-feedback-div = <64>;
 
 			adi,pll1-charge-pump-current-nA = <63500>;
 
@@ -34,7 +34,7 @@
 			adi,pll2-ndiv-a-cnt = <0>;
 			adi,pll2-ndiv-b-cnt = <30>;
 			adi,pll2-vco-diff-m1 = <3>; /* use 5 for 184320000 output device clock */
-			adi,pll2-n2-div = <40>; /* N / M1 */
+			adi,pll2-n2-div = <10>; /* N / M1 */
 			adi,pll2-r1-div = <1>;
 			adi,pll2-charge-pump-current-nA = <805000>;
 
