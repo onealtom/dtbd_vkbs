@@ -1,4 +1,7 @@
-all: markprint zqv3 gen_swu
+all: markprint osc_30m72 gen_swu
+
+osc_30m72: markprint osc_30m72_bd gen_swu
+osc_122m88: markprint osc_122m88_bd gen_swu
 
 markprint:
 	./version.sh
@@ -23,3 +26,13 @@ gen_swu:
 clean_swu:
 	rm -rf swu/*.swu
 	rm -rf swu/*.tar.gz
+
+
+
+osc_30m72_bd:
+	cpp -DOSC_30M72 -Iinclude -E -P -xassembler-with-cpp zynq-zqv3-adrv9375.dts > zynq-zqv3-adrv9375.tmp.dts
+	./dtc -I dts -O dtb -o devicetree.dtb zynq-zqv3-adrv9375.tmp.dts
+
+osc_122m88_bd:
+	cpp -DOSC_122M88 -Iinclude -E -P -xassembler-with-cpp zynq-zqv3-adrv9375.dts > zynq-zqv3-adrv9375.tmp.dts
+	./dtc -I dts -O dtb -o devicetree.dtb zynq-zqv3-adrv9375.tmp.dts

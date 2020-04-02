@@ -21,7 +21,11 @@
 			adi,refa-enable;
 			adi,refa-diff-rcv-enable;
 
-			adi,refa-r-div = <32>;
+#if defined (OSC_122M88)
+                        adi,refa-r-div = <32>;
+#elif defined (OSC_30M72)
+                       adi,refa-r-div = <128>;
+#endif
 			//adi,osc-in-cmos-neg-inp-enable;
 
 			/* PLL1 config */
@@ -34,7 +38,11 @@
 			adi,pll2-ndiv-a-cnt = <0>;
 			adi,pll2-ndiv-b-cnt = <30>;
 			adi,pll2-vco-diff-m1 = <3>; /* use 5 for 184320000 output device clock */
-			adi,pll2-n2-div = <10>; /* N / M1 */
+#if defined (OSC_122M88)
+                        adi,pll2-n2-div = <10>; /* N / M1 */
+#elif defined (OSC_30M72)
+                       adi,pll2-n2-div = <40>; /* N / M1 */
+#endif
 			adi,pll2-r1-div = <1>;
 			adi,pll2-charge-pump-current-nA = <805000>;
 

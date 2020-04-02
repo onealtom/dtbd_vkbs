@@ -1,0 +1,5 @@
+*.swu
+*.tar.gz
+
+!.gitignore
+
