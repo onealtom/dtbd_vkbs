@@ -1,31 +1,31 @@
 
-	ecp0@800 {
+	ecp0@8000c800 {
 		compatible = "generic-uio";
-		reg = < 0x8000c000 0x80>;
+		reg = < 0x8000c800 0x80>;
 		interrupt-parent = < 0x01 >;
 		channels = < 0x40 >;
 		interrupts = < 0x00 0x5b 0x04 >;
 	};
 
-	ecp1@880 {
+	ecp1@8000c880 {
 		compatible = "generic-uio";
-		reg = < 0x8000c000 0x80 >;
+		reg = < 0x8000c880 0x80 >;
 		interrupt-parent = < 0x01 >;
 		channels = < 0x40 >;
 		interrupts = < 0x00 0x5c 0x04 >;
 	};
 
-	ecp2@900 {
+	ecp2@8000c900 {
 		compatible = "generic-uio";
-		reg = < 0x8000c000 0x80 >;
+		reg = < 0x8000c900 0x80 >;
 		interrupt-parent = < 0x01 >;
 		channels = < 0x40 >;
 		interrupts = < 0x00 0x5d 0x04 >;
 	};
 
-	ecp3@980 {
+	ecp3@8000c980 {
 		compatible = "generic-uio";
-		reg = < 0x8000c000 0x80 >;
+		reg = < 0x8000c980 0x80 >;
 		interrupt-parent = < 0x01 >;
 		channels = < 0x40 >;
 		interrupts = < 0x00 0x5e 0x04 >;
