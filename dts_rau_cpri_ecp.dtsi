@@ -1,32 +1,36 @@
 
-	ecp0@8000c800 {
+	ecp0@800 {
 		compatible = "generic-uio";
-		reg = < 0x8000c800 0x80>;
-		interrupt-parent = < 0x01 >;
+		reg = < 0x8000c000 0x1000 >;
+		interrupt-controller;
+		interrupt-parent = <&intc>;
 		channels = < 0x40 >;
 		interrupts = < 0x00 0x5b 0x04 >;
 	};
 
-	ecp1@8000c880 {
+	ecp1@880 {
 		compatible = "generic-uio";
-		reg = < 0x8000c880 0x80 >;
-		interrupt-parent = < 0x01 >;
+		reg = < 0x8000c000 0x1000 >;
+		interrupt-controller;
+		interrupt-parent = <&intc>;
 		channels = < 0x40 >;
 		interrupts = < 0x00 0x5c 0x04 >;
 	};
 
-	ecp2@8000c900 {
+	ecp2@900 {
 		compatible = "generic-uio";
-		reg = < 0x8000c900 0x80 >;
-		interrupt-parent = < 0x01 >;
+		reg = < 0x8000c000 0x1000 >;
+		interrupt-controller;
+		interrupt-parent = <&intc>;
 		channels = < 0x40 >;
 		interrupts = < 0x00 0x5d 0x04 >;
 	};
 
-	ecp3@8000c980 {
+	ecp3@980 {
 		compatible = "generic-uio";
-		reg = < 0x8000c980 0x80 >;
-		interrupt-parent = < 0x01 >;
+		reg = < 0x8000c000 0x1000 >;
+		interrupt-controller;
+		interrupt-parent = <&intc>;
 		channels = < 0x40 >;
 		interrupts = < 0x00 0x5e 0x04 >;
 	};
@@ -84,25 +88,29 @@
 
 		cpri0-irq@c8 {
 			compatible = "generic-uio";
-			interrupt-parent = < 0x01 >;
+			interrupt-controller;
+			interrupt-parent = <&intc>;
 			interrupts = < 0x00 0x57 0x04 >;
 		};
 
 		cpri1-irq@1e0 {
 			compatible = "generic-uio";
-			interrupt-parent = < 0x01 >;
+			interrupt-controller;
+			interrupt-parent = <&intc>;
 			interrupts = < 0x00 0x58 0x04 >;
 		};
 
 		cpri2-irq@2f8 {
 			compatible = "generic-uio";
-			interrupt-parent = < 0x01 >;
+			interrupt-controller;
+			interrupt-parent = <&intc>;
 			interrupts = < 0x00 0x59 0x04 >;
 		};
 
 		cpri3-irq@410 {
 			compatible = "generic-uio";
-			interrupt-parent = < 0x01 >;
+			interrupt-controller;
+			interrupt-parent = <&intc>;
 			interrupts = < 0x00 0x5a 0x04 >;
 		};
 
@@ -111,5 +119,4 @@
 			reg = < 0x000c000 0x1000 >;
 		};
 	};
-
 
