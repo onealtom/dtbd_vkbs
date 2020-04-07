@@ -4,7 +4,6 @@
 
 &spi0 {
 
-
 	clk0_ad9528: ad9528-1@0 {
 			#address-cells = <1>;
 			#size-cells = <0>;
@@ -16,8 +15,12 @@
 			reg = <0>;
 
 			clock-output-names = "ad9528-1_out0", "ad9528-1_out1", "ad9528-1_out2", "ad9528-1_out3", "ad9528-1_out4", "ad9528-1_out5", 	"ad9528-1_out6", "ad9528-1_out7", "ad9528-1_out8", "ad9528-1_out9", "ad9528-1_out10", "ad9528-1_out11", "ad9528-1_out12", 	"ad9528-1_out13";
-			adi,vcxo-freq = <122880000>;
 
+#if defined (OSC_122M88)
+			adi,vcxo-freq = <122880000>;
+#elif defined (OSC_30M72)
+			adi,vcxo-freq = <30700000>;
+#endif
 			adi,refa-enable;
 			adi,refa-diff-rcv-enable;
 
