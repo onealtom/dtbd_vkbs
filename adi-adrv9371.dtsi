@@ -19,7 +19,7 @@
 #if defined (OSC_122M88)
 			adi,vcxo-freq = <122880000>;
 #elif defined (OSC_30M72)
-			adi,vcxo-freq = <30700000>;
+			adi,vcxo-freq = <30720000>;
 #endif
 			adi,refa-enable;
 			adi,refa-diff-rcv-enable;
