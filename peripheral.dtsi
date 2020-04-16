@@ -51,58 +51,49 @@
 		#size-cells = <1>;
 		ranges;
 
-		i2c-gpio-0 {
-			compatible = "i2c-gpio";
-			//SDA EMIO19 gpio73
-			//SCL EMIO18 gpio72
-			gpios = <&gpio0 73 0
-				 &gpio0 72 0
-					>;
-			i2c-gpio,sda-open-drain;
-			i2c-gpio,scl-open-drain;
-			i2c-gpio,delay-us = <2>;	/* ~100 kHz */
-			#address-cells = <1>;
-			#size-cells = <0>;
-			pinctrl-names = "default";
-			//pinctrl-0 = <&pinctrl_i2c_gpio0>;
-			status = "okay";
-		};
-
-
-		i2c-gpio-1 {
-			compatible = "i2c-gpio";
-			//SDA EMIO24 gpio78
-			//SCL EMIO23 gpio77
-			gpios = <&gpio0 78 0
-				 &gpio0 77 0
-					>;
-			i2c-gpio,sda-open-drain;
-			i2c-gpio,scl-open-drain;
-			i2c-gpio,delay-us = <2>;	/* ~100 kHz */
-			#address-cells = <1>;
-			#size-cells = <0>;
-			pinctrl-names = "default";
-			//pinctrl-0 = <&pinctrl_i2c_gpio0>;
-			status = "okay";
-		};
-
-
-		i2c-gpio-2 {
-			compatible = "i2c-gpio";
-			//SDA EMIO29 gpio83
-			//SCL EMIO28 gpio82
-			gpios = <&gpio0 83 0
-				 &gpio0 82 0
-					>;
-			i2c-gpio,sda-open-drain;
-			i2c-gpio,scl-open-drain;
-			i2c-gpio,delay-us = <2>;	/* ~100 kHz */
-			#address-cells = <1>;
-			#size-cells = <0>;
-			pinctrl-names = "default";
-			//pinctrl-0 = <&pinctrl_i2c_gpio0>;
-			status = "okay";
-		};
-
 	};
+
+	&fpga_axi {
+
+		axi_i2c_0: axii2c0@0x40100000 {
+	    		compatible = "xlnx,xps-iic-2.00.a";
+			interrupt-parent = <&intc>;
+			clocks = <&clkc 38>;
+			reg = < 0x40100000 0x1000 >;
+	    		interrupts = <0 32 1>;
+	    		#address-cells = <1>;
+	    		#size-cells = <0>;
+		};
+
+		axi_i2c_1: axii2c1@0x40101000 {
+	    		compatible = "xlnx,xps-iic-2.00.a";
+			interrupt-parent = <&intc>;
+			clocks = <&clkc 38>;
+			reg = < 0x40101000 0x1000 >;
+	    		interrupts = <0 33 1>;
+	    		#address-cells = <1>;
+	    		#size-cells = <0>;
+		};
+
+		axi_i2c_2: axii2c2@0x40102000 {
+	    		compatible = "xlnx,xps-iic-2.00.a";
+			interrupt-parent = <&intc>;
+			clocks = <&clkc 38>;
+			reg = < 0x40102000 0x1000 >;
+	    		interrupts = <0 34 1>;
+	    		#address-cells = <1>;
+	    		#size-cells = <0>;
+		};
+
+		axi_i2c_3: axii2c3@0x40103000 {
+	    		compatible = "xlnx,xps-iic-2.00.a";
+			interrupt-parent = <&intc>;
+			clocks = <&clkc 38>;
+			reg = < 0x40103000 0x1000 >;
+	    		interrupts = <0 35 1>;
+	    		#address-cells = <1>;
+	    		#size-cells = <0>;
+		};
+	};
+
 };
