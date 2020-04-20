@@ -59,42 +59,42 @@
 &fpga_axi {
 
 	axi_i2c_0: axii2c0@0x40100000 {
-    		compatible = "xlnx,xps-iic-2.00.a";
+		compatible = "xlnx,xps-iic-2.00.a";
 		interrupt-parent = <&intc>;
 		clocks = <&clkc 38>;
 		reg = < 0x40100000 0x1000 >;
-    		interrupts = <0 32 1>;
-    		#address-cells = <1>;
-    		#size-cells = <0>;
+		interrupts = <0 55 1>;
+		#address-cells = <1>;
+		#size-cells = <0>;
 	};
 
 	axi_i2c_1: axii2c1@0x40101000 {
-    		compatible = "xlnx,xps-iic-2.00.a";
+		compatible = "xlnx,xps-iic-2.00.a";
 		interrupt-parent = <&intc>;
 		clocks = <&clkc 38>;
 		reg = < 0x40101000 0x1000 >;
-    		interrupts = <0 33 1>;
-    		#address-cells = <1>;
-    		#size-cells = <0>;
+		interrupts = <0 56 1>;
+		#address-cells = <1>;
+		#size-cells = <0>;
 	};
 
 	axi_i2c_2: axii2c2@0x40102000 {
-    		compatible = "xlnx,xps-iic-2.00.a";
+		compatible = "xlnx,xps-iic-2.00.a";
 		interrupt-parent = <&intc>;
 		clocks = <&clkc 38>;
 		reg = < 0x40102000 0x1000 >;
-    		interrupts = <0 34 1>;
-    		#address-cells = <1>;
-    		#size-cells = <0>;
+		interrupts = <0 57 1>;
+		#address-cells = <1>;
+		#size-cells = <0>;
 	};
 
 	axi_i2c_3: axii2c3@0x40103000 {
-    		compatible = "xlnx,xps-iic-2.00.a";
+		compatible = "xlnx,xps-iic-2.00.a";
 		interrupt-parent = <&intc>;
 		clocks = <&clkc 38>;
 		reg = < 0x40103000 0x1000 >;
-    		interrupts = <0 35 1>;
-    		#address-cells = <1>;
-    		#size-cells = <0>;
+		interrupts = <0 58 1>;
+		#address-cells = <1>;
+		#size-cells = <0>;
 	};
 };
