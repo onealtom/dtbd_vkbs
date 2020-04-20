@@ -97,21 +97,21 @@
 			compatible = "generic-uio";
 			interrupt-controller;
 			interrupt-parent = <&intc>;
-			interrupts = < 0 37 4 >;
+			interrupts = < 0 52 4 >;
 		};
 
 		cpri2-irq@2f8 {
 			compatible = "generic-uio";
 			interrupt-controller;
 			interrupt-parent = <&intc>;
-			interrupts = < 0 38 4 >;
+			interrupts = < 0 53 4 >;
 		};
 
 		cpri3-irq@410 {
 			compatible = "generic-uio";
 			interrupt-controller;
 			interrupt-parent = <&intc>;
-			interrupts = < 0 39 4 >;
+			interrupts = < 0 54 4 >;
 		};
 
 	};
