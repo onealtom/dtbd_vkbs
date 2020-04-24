@@ -62,37 +62,37 @@
 		compatible = "xlnx,xps-iic-2.00.a";
 		interrupt-parent = <&intc>;
 		clocks = <&clkc 38>;
-		reg = < 0x40100000 0x1000 >;
+		reg = < 0x80100000 0x1000 >;
 		interrupts = <0 55 1>;
 		#address-cells = <1>;
 		#size-cells = <0>;
 	};
 
-	axi_i2c_1: axii2c1@0x40101000 {
+	axi_i2c_1: axii2c1@0x80101000 {
 		compatible = "xlnx,xps-iic-2.00.a";
 		interrupt-parent = <&intc>;
 		clocks = <&clkc 38>;
-		reg = < 0x40101000 0x1000 >;
+		reg = < 0x80101000 0x1000 >;
 		interrupts = <0 56 1>;
 		#address-cells = <1>;
 		#size-cells = <0>;
 	};
 
-	axi_i2c_2: axii2c2@0x40102000 {
+	axi_i2c_2: axii2c2@0x80102000 {
 		compatible = "xlnx,xps-iic-2.00.a";
 		interrupt-parent = <&intc>;
 		clocks = <&clkc 38>;
-		reg = < 0x40102000 0x1000 >;
+		reg = < 0x80102000 0x1000 >;
 		interrupts = <0 57 1>;
 		#address-cells = <1>;
 		#size-cells = <0>;
 	};
 
-	axi_i2c_3: axii2c3@0x40103000 {
+	axi_i2c_3: axii2c3@0x80103000 {
 		compatible = "xlnx,xps-iic-2.00.a";
 		interrupt-parent = <&intc>;
 		clocks = <&clkc 38>;
-		reg = < 0x40103000 0x1000 >;
+		reg = < 0x80103000 0x1000 >;
 		interrupts = <0 58 1>;
 		#address-cells = <1>;
 		#size-cells = <0>;
