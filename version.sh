@@ -4,6 +4,9 @@ rm -f ./dt_ver.dtsi
 # dtc builder info
 DTC_VER=`./dtc -v`
 
+NUMDIRTY=`git status --porcelain | wc -l`
+RELTAG=`git tag | head -n 1`
+
 # git commit info
 git rev-list HEAD | sort > config.git-hash
 LOCALVER=`wc -l config.git-hash | awk '{print $1}'`
@@ -16,7 +19,7 @@ if [ $LOCALVER \> 1 ] ; then
         VER="${VER}M"
     fi
     VER="$VER $(git rev-list HEAD -n 1 | cut -c 1-7)"
-    GIT_VERSION=r$VER
+    GIT_VERSION=r$VER" (dirty: "$NUMDIRTY" tag: "$RELTAG")"
 else
     GIT_VERSION=
     VER="x"
